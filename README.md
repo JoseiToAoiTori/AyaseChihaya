@@ -2,6 +2,10 @@
 
 ***
 
+[![](https://david-dm.org/JoseiToAoiTori/AyaseChihaya.svg)](https://david-dm.org/JoseiToAoiTori/AyaseChihaya) ![](https://badgen.net/npm/node/next)
+
+***
+
 A Discord Bot for personal use. Any functionality is entirely arbitrary and dependent on my mood. Built on top of the Yuuko and Eris frameworks.
 
 ***
