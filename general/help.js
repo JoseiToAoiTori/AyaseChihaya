@@ -1,16 +1,23 @@
 const {Command} = require('yuuko');
-const config = require('../config');
+
+let config;
+
+try {
+	config = require('../config');
+} catch (error) {
+	config = {};
+}
 
 module.exports = new Command('help', message => {
 	const embed = {
 		embed: {
 			thumbnail: {
-				url: config.avatar,
+				url: config.avatar || process.env.AVATAR,
 			},
-			color: config.colour,
+			color: config.colour || process.env.COLOUR,
 			author: {
 				name: 'Help',
-				icon_url: config.avatar,
+				icon_url: config.avatar || process.env.AVATAR,
 			},
 			description: 'All commands are used with the `;` prefix.',
 			fields: [{
@@ -48,7 +55,7 @@ module.exports = new Command('help', message => {
 			],
 			footer: {
 				text: 'This is a bot developed by Heather ★#6868 (/u/EpicTroll27). Hyakunin Isshu data has been compiled by Shiara#0001 (/u/walking_the_way).',
-				icon_url: config.avatar,
+				icon_url: config.avatar || process.env.AVATAR,
 			},
 		},
 	};
@@ -61,7 +68,7 @@ module.exports = new Command('help', message => {
 		{
 			name: ';ask a question',
 			value: 'Command exclusive to Heather and Ralon. Asks a question during family feud games and first to react gets to go first.',
-		}
+		},
 		];
 	}
 	message.channel.createMessage(embed);

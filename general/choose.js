@@ -1,6 +1,13 @@
 const {Command} = require('yuuko');
-const config = require('../config');
 const Chance = require('chance');
+
+let config;
+
+try {
+	config = require('../config');
+} catch (error) {
+	config = {};
+}
 
 module.exports = new Command('choose', (message, args) => {
 	const chance = new Chance();
@@ -9,7 +16,7 @@ module.exports = new Command('choose', (message, args) => {
 		message.channel.createMessage({
 			embed: {
 				title: 'Not enough arguments.',
-				color: config.colour,
+				color: config.colour || process.env.COLOUR,
 			},
 		});
 		return;

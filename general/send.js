@@ -1,15 +1,23 @@
 const {Command} = require('yuuko');
-const config = require('../config');
+
+let config;
+
+try {
+	config = require('../config');
+} catch (error) {
+	config = {};
+}
 
 module.exports = new Command('send', (message, args, {yuuko}) => {
-	if (message.author.id !== config.owner || args.length < 2) return;
+	const owner = config.owner || process.env.OWNER;
+	if (message.author.id !== owner || args.length < 2) return;
 	const channelID = args[0];
 	args.splice(0, 1);
 	try {
 		yuuko.createMessage(channelID, {
 			embed: {
 				description: args.join(' '),
-				color: config.colour,
+				color: config.colour || process.env.COLOUR,
 			},
 		});
 	} catch (error) {

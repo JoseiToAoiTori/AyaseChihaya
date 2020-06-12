@@ -13,7 +13,7 @@ try {
 }
 
 const query = `query ($search: String) {
-	results: Media(type: ANIME, sort: SEARCH_MATCH, search: $search) {
+	results: Media(type: MANGA, sort: SEARCH_MATCH, search: $search) {
 	  id
 	  format
 	  startDate {
@@ -29,15 +29,10 @@ const query = `query ($search: String) {
 	  averageScore
 	  description
 	  duration
-	  episodes
+	  chapters
 	  format
 	  genres
 	  idMal
-	  nextAiringEpisode {
-		id
-		episode
-		timeUntilAiring
-	  }
 	  popularity
 	  rankings {
 		id
@@ -60,7 +55,7 @@ const query = `query ($search: String) {
   }
   `;
 
-module.exports = new Command('anime', async (message, args) => {
+module.exports = new Command('manga', async (message, args) => {
 	if (args.length < 1) {
 		message.channel.createMessage({
 			embed: {
@@ -83,17 +78,6 @@ module.exports = new Command('anime', async (message, args) => {
 	}
 	const anime = response.body.data.results;
 	const rank = anime.rankings.find(ranking => ranking.context === 'most popular all time');
-	let nextEp;
-	if (anime.nextAiringEpisode) {
-		nextEp = new Date(anime.nextAiringEpisode.timeUntilAiring * 1000);
-		const minutes = Math.floor((nextEp/1000/60) % 60);
-		const hours = Math.floor((nextEp/(1000*60*60)) % 24);
-		const days = Math.floor(nextEp/(1000*60*60*24));
-		if (days === 0 && hours === 0 && minutes === 0) nextEp = 'Literal seconds away';
-		else if (days === 0 && hours === 0) nextEp = `${minutes} minutes`;
-		else if (days === 0) nextEp = `${hours} hours ${minutes} minutes`;
-		else nextEp = `${days} days ${hours} hours ${minutes} minutes`;
-	}
 
 	const embed = {
 		embed: {
@@ -125,8 +109,8 @@ module.exports = new Command('anime', async (message, args) => {
 					inline: true,
 				},
 				{
-					name: 'Episodes',
-					value: anime.episodes || 'Unknown',
+					name: 'Chapters',
+					value: anime.chapters || 'Unknown',
 					inline: true,
 				},
 				{
@@ -149,18 +133,12 @@ module.exports = new Command('anime', async (message, args) => {
 					value: anime.genres.join('\n'),
 					inline: true,
 				},
+				{
+					name: 'Description',
+					value: anime.description ? anime.description.length >= 1020 ? turndownService.turndown(anime.description.substring(0, 1020)) + '...' : turndownService.turndown(anime.description) : '*No description provided*',
+				},
 			],
 		},
 	};
-	if (nextEp) {
-		embed.embed.fields.push({
-			name: 'Next Episode',
-			value: nextEp,
-		});
-	}
-	embed.embed.fields.push({
-		name: 'Description',
-		value: anime.description ? anime.description.length >= 1020 ? turndownService.turndown(anime.description.substring(0, 1020)) + '...' : turndownService.turndown(anime.description) : '*No description provided*',
-	});
 	message.channel.createMessage(embed);
 });
