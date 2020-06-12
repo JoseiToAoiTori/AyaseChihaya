@@ -1,0 +1,14 @@
+{
+  "name": "chihaya-2.0",
+  "version": "1.0.0",
+  "description": "A Discord Bot for personal use",
+  "main": "index.js",
+  "repository": "https://github.com/JoseiToAoiTori/AyaseChihaya.git",
+  "author": "JoseiToAoiTori",
+  "license": "MIT",
+  "dependencies": {
+    "eris": "^0.13.1",
+    "eslint": "^7.2.0",
+    "yuuko": "^2.0.0"
+  }
+}
