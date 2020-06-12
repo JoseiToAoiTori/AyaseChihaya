@@ -8,7 +8,9 @@ const yuuko = new Client({
 });
 
 yuuko
+	.extendContext({yuuko})
 	.addCommandDir(path.join(__dirname, 'general'))
+	.addCommandDir(path.join(__dirname, 'anime'))
 	.connect();
 
 yuuko.once('ready', () => {

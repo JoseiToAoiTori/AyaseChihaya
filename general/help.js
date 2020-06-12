@@ -1,5 +1,5 @@
 const {Command} = require('yuuko');
-const config = require('../config.json');
+const config = require('../config');
 
 module.exports = new Command('help', message => {
 	const embed = {
@@ -7,7 +7,7 @@ module.exports = new Command('help', message => {
 			thumbnail: {
 				url: config.avatar,
 			},
-			color: 8302335,
+			color: config.colour,
 			author: {
 				name: 'Help',
 				icon_url: config.avatar,

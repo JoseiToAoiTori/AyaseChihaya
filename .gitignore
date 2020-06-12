@@ -1,6 +1,6 @@
 # Dependencies
 node_modules
 #Secrets
-config.json
+config.js
 #Editor generated files
 .vscode
