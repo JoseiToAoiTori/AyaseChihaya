@@ -2,7 +2,7 @@
 
 ***
 
-A Discord Bot for personal use. Any functionality is entirely arbitrary and dependent on my mood.
+A Discord Bot for personal use. Any functionality is entirely arbitrary and dependent on my mood. Built on top of the Yuuko and Eris frameworks.
 
 ***
 
