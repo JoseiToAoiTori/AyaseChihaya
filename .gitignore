@@ -2,5 +2,6 @@
 node_modules
 #Secrets
 config.js
+twitconfig.js
 #Editor generated files
 .vscode

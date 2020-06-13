@@ -63,7 +63,7 @@ module.exports = new Command('help', message => {
 	if (message.guildID === '514203145333899276') {
 		embed.embed.fields = [...embed.embed.fields, {
 			name: ';gw',
-			value: 'Returns a schedule for groupwatches. Ask Heather ★#6868 to update the schedule in case of changes.',
+			value: 'Returns a schedule for groupwatches. Ask Deafness#3061 to update the schedule in case of changes. Ask Heather ★#6868 for code changes or other issues.',
 		},
 		{
 			name: ';ask a question',
