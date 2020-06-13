@@ -1,6 +1,6 @@
 # Ayase Chihaya
 
-[![](https://david-dm.org/JoseiToAoiTori/AyaseChihaya.svg)](https://david-dm.org/JoseiToAoiTori/AyaseChihaya) ![](https://badgen.net/npm/node/next)
+[![](https://david-dm.org/JoseiToAoiTori/AyaseChihaya/status.svg)](https://david-dm.org/JoseiToAoiTori/AyaseChihaya) ![](https://badgen.net/npm/node/next)
 
 ***
 
