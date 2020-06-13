@@ -1,0 +1,920 @@
+[
+    {
+        "id" : 0,
+        "poet" : "王仁 (Wani) [Unknown (active ~405)]",
+        "poem" : {
+            "original" : "難波津に　咲くやこの花　冬ごもり　今を春べと　咲くやこの花",
+            "romaji" : "Naniwa zu ni/Sakuya kono hana/Fuyu gomori/Ima o harube to/Sakuya kono hana",
+            "crunchyroll" : "Naniwa Bay, now the flower blooms, but for winter. Here comes spring, now the flower blooms."
+        }
+    },
+    {
+        "id" : 1,
+        "poet" : "天智天皇 (Emperor Tenji) [626-672]",
+        "poem" : {
+            "original" : "秋の田の　かりほの庵の　苫をあらみ　わが衣手は　露にぬれつつ",
+            "romaji" : "Aki no ta no/Kariho no io no/Toma o arami/Waga koromode wa/Tsuyu ni nure tsutsu",
+            "crunchyroll" : "The autumn paddy shacks have rough thatching as my sleeves are wet with dew."
+        }
+    },
+    {
+        "id" : 2,
+        "poet" : "持統天皇 (Empress Jitou) [645-703]",
+        "poem" : {
+            "original" : "春過ぎて　夏来にけらし　白妙の　衣ほすてふ　天の香具山",
+            "romaji" : "Haru sugite/Natsu ki ni kerashi/Shirotae no/Koromo hosu chou/Ama no Kaguyama",
+            "crunchyroll" : "So spring ends and summer comes. Now white robes hang to dry on Mount Amanokagu."
+        }
+    },
+    {
+        "id" : 3,
+        "poet" : "柿本人麿 (Kakinomoto no Hitomaro) [662-710]",
+        "poem" : {
+            "original" : "あしびきの　山鳥の尾の　しだり尾の　長々し夜を　独りかも寝む",
+            "romaji" : "Ashibiki no/Yamadori no o no/Shidari o no/Naganagashi yo o/Hitori ka mo nen",
+            "crunchyroll" : "The tail feathers of the copper pheasant are long, long as the nights I spend alone."
+        }
+    },
+    {
+        "id" : 4,
+        "poet" : "山部赤人 (Yamabe no Akahito) [700-736]",
+        "poem" : {
+            "original" : "田子の浦に　うち出でてみれば　白妙の　富士の高嶺に　雪は降りつつ",
+            "romaji" : "Tago no ura ni/Uchi idete mireba/Shirotae no/Fuji no takane ni/Yuki wa furi tsutsu",
+            "crunchyroll" : "No matter where I stand on the shores of Tago, I can look up and see the snowy cap of Mt. Fuji."
+        }
+    },
+    {
+        "id" : 5,
+        "poet" : "猿丸大夫 (Sarumaru no Taifu) [Unknown (active ~708-715)]",
+        "poem" : {
+            "original" : "奥山に　紅葉踏み分け　鳴く鹿の　声聞く時ぞ　秋は悲しき",
+            "romaji" : "Okuyama ni/Momiji fumiwake/Naku shika no/Koe kiku toki zo/Aki wa kanashiki",
+            "crunchyroll" : "While autumn leaves crunch under deer footsteps, the stag cries longingly for the doe."
+        }
+    },
+    {
+        "id" : 6,
+        "poet" : "中納言家持 (Ootomo no Yakamochi) [718-785]",
+        "poem" : {
+            "original" : "かささぎの　渡せる橋に　おく霜の　白きを見れば　夜ぞ更けにける",
+            "romaji" : "Kasasagi no/Wataseru hashi ni/Oku shimo no/Shiroki o mireba/Yo zo fuke ni keru",
+            "crunchyroll" : "When the misty bridge of magpie's feathers comes into sight, the night is nearly past."
+        }
+    },
+    {
+        "id" : 7,
+        "poet" : "阿部仲麿 (Abe no Nakamaro) [698-770]",
+        "poem" : {
+            "original" : "天の原　ふりさけ見れば　春日なる　三笠の山に　出でし月かも",
+            "romaji" : "Ama no hara/Furisake mireba/Kasuga naru/Mikasa no yama ni/Ideshi tsuki kamo",
+            "crunchyroll" : "The sky may hold the same moon [...] which shines over Mount Mikasa."
+        }
+    },
+    {
+        "id" : 8,
+        "poet" : "喜撰法師 (Priest Kisen) [Unknown (early Heian)]",
+        "poem" : {
+            "original" : "我が庵は　都の辰巳　しかぞ住む　世をうぢ山と　人はいふなり",
+            "romaji" : "Waga io wa/Miyako no tatsumi/Shika zo sumu/Yo o Ujiyama to/Hito wa iu nari",
+            "crunchyroll" : "My own home is a retreat lying southeast of the capital [...] the troubles of this world."
+        }
+    },
+    {
+        "id" : 9,
+        "poet" : "小野小町 (Ono no Komachi) [825-900]",
+        "poem" : {
+            "original" : "花の色は　移りにけりな　いたづらに　我が身世にふる　ながめせし間に",
+            "romaji" : "Hana no iro wa/Utsuri ni keri na/Itazura ni/Waga mi yo ni furu/Nagame seshi ma ni",
+            "crunchyroll" : "So the flower has wilted during the long spring rains, just as my beauty has faded during my forlorn years in this world."
+        }
+    },
+    {
+        "id" : 10,
+        "poet" : "蝉丸 (Semimaru) [Unknown (early Heian)]",
+        "poem" : {
+            "original" : "これやこの　行くも帰るも　別れては　知るも知らぬも　逢坂の関",
+            "romaji" : "Kore ya kono/Yuku mo kaeru mo/Wakarete wa/Shiru mo shiranu mo/Ousaka no seki",
+            "crunchyroll" : "As friends and strangers come and go from the capital, they all exchange hellos and goodbyes at the famous gates of Afusaka."
+        }
+    },
+    {
+        "id" : 11,
+        "poet" : "参議篁 (Ono no Takamura) [802-853]",
+        "poem" : {
+            "original" : "わたの原　八十島かけて　漕ぎ出でぬと　人には告げよ　海人の釣り舟",
+            "romaji" : "Wata no hara/Yasoshima kakete/Kogi idenu to/Hito ni wa tsugeyo/Ama no tsuri bune",
+            "crunchyroll" : "My only thought as I am put out to sea is to ask the fishermen to tell the people in the capital that I make for the islands."
+        }
+    },
+    {
+        "id" : 12,
+        "poet" : "僧正遍昭 (High Priest Henjou) [816-890]",
+        "poem" : {
+            "original" : "天つ風　雲のひ通路　吹き閉ぢよ　をとめの姿　しばしとどめむ",
+            "romaji" : "Ama tsu kaze/Kumo no kayoiji/Fuki toji yo/Otome no sugata/Shibashi todomen",
+            "crunchyroll" : "The sky is the road home for the holy maidens, may the wind bring clouds to extend their stay."
+        }
+    },
+    {
+        "id" : 13,
+        "poet" : "陽成院 (Emperor Youzei) [869-949]",
+        "poem" : {
+            "original" : "筑波嶺の　峰より落つる　男女川　恋ぞつもりて　淵となりぬる",
+            "romaji" : "Tsukuba ne no/Mine yori otsuru/Minanogawa/Koi zo tsumorite/Fuchi to nari nuru",
+            "crunchyroll" : "Feel love deepen [...] widening into a river as it descends Mount Tsukuba."
+        }
+    },
+    {
+        "id" : 14,
+        "poet" : "河原左大臣 (Minamoto no Tooru) [822-895]",
+        "poem" : {
+            "original" : "陸奥の　しのぶもぢずり　誰ゆゑに　乱れそめにし　我ならなくに",
+            "romaji" : "Michinoku no/Shinobu mojizuri/Tare yue ni/Midare some ni shi/Ware naranaku ni",
+            "crunchyroll" : "I know that my heart is all aflutter and by no fault of mine."
+        }
+    },
+    {
+        "id" : 15,
+        "poet" : "光孝天皇 (Emperor Koukou) [830-887]",
+        "poem" : {
+            "original" : "君がため　春の野に出でて　若菜摘む　我が衣手に　雪は降りつつ",
+            "romaji" : "Kimi ga tame/Haru no no ni idete/Wakana tsumu/Waga koromode ni/Yuki wa furi tsutsu",
+            "crunchyroll" : "For you, I head out to the fields to pick spring greens while snow falls upon my sleeves."
+        }
+    },
+    {
+        "id" : 16,
+        "poet" : "中納言行平 (Ariwara no Yukihira) [818-893]",
+        "poem" : {
+            "original" : "立ちわかれ　いなばの山の　峰に生ふる　まつとし聞かば　今帰り来む",
+            "romaji" : "Tachi wakare/Inaba no yama no/Mine ni oru/Matsu to shi kikaba/Ima kaeri kon",
+            "crunchyroll" : "Note that though we may be apart, if I am to hear that you pine for me as the Inaba Mountain pines, I shall return to you."
+        }
+    },
+    {
+        "id" : 17,
+        "poet" : "在原業平朝臣 (Ariwara no Narihira) [825-880]",
+        "poem" : {
+            "original" : "ちはやぶる　神代も聞かず　龍田川　唐紅に　水くくるとは",
+            "romaji" : "Chihayaburu/Kamiyo mo kikazu/Tatsutagawa/Kara kurenai ni/Mizu kukuru to wa",
+            "crunchyroll" : "Impassionate gods have never seen the red that is the Tatsuta river."
+        }
+    },
+    {
+        "id" : 18,
+        "poet" : "藤原敏行朝臣 (Fujiwara no Toshiyuki) [Unknown-~907]",
+        "poem" : {
+            "original" : "住の江の　岸に寄る波　よるさへや　夢の通ひ路　人目よくらむ",
+            "romaji" : "Suminoe no/Kishi ni yoru nami/Yoru sae ya/Yume no kayoi ji/Hito me yoku ran",
+            "crunchyroll" : "Silent waves creep closer to the Suminoe shore, and when night falls, in my dreams, I creep closer to you."
+        }
+    },
+    {
+        "id" : 19,
+        "poet" : "伊勢 (Lady Ise) [875-938]",
+        "poem" : {
+            "original" : "難波潟　短き芦の　節の間も　逢はでこの世を　過ぐしてよとや",
+            "romaji" : "Naniwa gata/Mijikaki ashi no/Fushi no ma mo/Awade kono yo o/Sugushite yo to ya",
+            "crunchyroll" : "May the time we spend apart from one another be as short-lived as the reeds of Naniwa Bay."
+        }
+    },
+    {
+        "id" : 20,
+        "poet" : "元良親王 (Prince Motoyoshi) [890-943]",
+        "poem" : {
+            "original" : "わびぬれば　今はた同じ　難波なる　みをつくしても　逢はむとぞ思ふ",
+            "romaji" : "Wabi nureba/Ima hata onaji/Naniwa naru/Mi o tsukushite mo/Awan to zo omou",
+            "crunchyroll" : "My life means nothing after all the agonizing I have endured. I will not cast myself into Naniwa Bay, but I will risk my life to see you again."
+        }
+    },
+    {
+        "id" : 21,
+        "poet" : "素性法師 (Priest Sosei) [844-910]",
+        "poem" : {
+            "original" : "今来むと　いひしばかりに　長月の　有り明けの月を　待ち出でつるかな",
+            "romaji" : "Ima kon to/Iishi bakari ni/Nagatsuki no/Ariake no tsuki o/Machi idetsuru kana",
+            "crunchyroll" : "After I heard you say [...] on a long September night, and then I saw a dawn moon."
+        }
+    },
+    {
+        "id" : 22,
+        "poet" : "文屋康秀 (Fun'ya no Yasuhide) [Unknown-~885]",
+        "poem" : {
+            "original" : "吹くからに　秋の草木の　しをるれば　むべ山風を　嵐といふらむ",
+            "romaji" : "Fuku kara ni/Aki no kusaki no/Shiorureba/Mube yama kaze o/Arashi to iuran",
+            "crunchyroll" : "Gust of wind leaves fall leaves falling hence the name fall leaves."
+        }
+    },
+    {
+        "id" : 23,
+        "poet" : "大江千里 (Ooe no Chisato) [Unknown (active ~889-923)]",
+        "poem" : {
+            "original" : "月見れば　ちぢに物こそ　悲しけれ　我が身一つの　秋にはあらねど",
+            "romaji" : "Tsuki mireba/Chiji ni mono koso/Kanashi kere/Waga mi hitotsu no/Aki ni wa aranedo",
+            "crunchyroll" : "Feel sorrow wash over me when I see the moon, though autumn is not mine alone."
+        }
+    },
+    {
+        "id" : 24,
+        "poet" : "管家 (Sugawara no Michizane) [845-903]",
+        "poem" : {
+            "original" : "このたびは　幣もとりあへず　手向山　紅葉の錦　神のまにまに",
+            "romaji" : "Kono tabi wa/Nusa mo toriaezu/Tamukeyama/Momiji no nishiki/Kami no mani mani",
+            "crunchyroll" : "As this trip takes me away in haste, I have only autumn leaves as an offering for the gods watching over me."
+        }
+    },
+    {
+        "id" : 25,
+        "poet" : "三条右大臣 (Fujiwara no Sadakata) [873-932]",
+        "poem" : {
+            "original" : "名にし負はば　逢坂山の　さねかづら　人に知られで　くるよしもがな",
+            "romaji" : "Na ni shi owaba/Ousakayama no/Sanekazura/Hito ni shirarede/Kuru yoshi mo gana",
+            "crunchyroll" : "May the scarlet kadsuras of Mount Afusaka live up to their name and allow us this secret rendezvous."
+        }
+    },
+    {
+        "id" : 26,
+        "poet" : "貞信公 (Fujiwara no Tadahira) [880-949]",
+        "poem" : {
+            "original" : "小倉山　峰のもみぢ葉　心あらば　今一度の　行幸待たなむ",
+            "romaji" : "Ogurayama/Mine no momijiba/Kokoro araba/Ima hitotabi no/Miyuki matanan",
+            "crunchyroll" : "While the autumn leaves of Mount Ogura would never understand human emotion, I beseech them to wait for the Emperor's return before falling."
+        }
+    },
+    {
+        "id" : 27,
+        "poet" : "中納言兼輔 (Fujiwara no Kanesuke) [877-933]",
+        "poem" : {
+            "original" : "みかの原　わきて流るる　いづみ川　いつ見きとてか　恋しかるらむ",
+            "romaji" : "Mika no hara/Wakite nagaruru/Izumigawa/Itsu miki tote ka/Koishi karuran",
+            "crunchyroll" : "I feel as though I am like the Izumi river split, [...]"
+        }
+    },
+    {
+        "id" : 28,
+        "poet" : "源宗于朝臣 (Minamoto no Muneyuki) [Unknown-940]",
+        "poem" : {
+            "original" : "山里は　冬ぞ寂しさ　まさりける　人目も草も　かれぬと思へば",
+            "romaji" : "Yamazato wa/Fuyu zo sabishisa/Masari keru/Hitome mo kusa mo/Karenu to omoeba",
+            "crunchyroll" : "A mountain village grows lonesome every winter when people and grass grow scarce."
+        }
+    },
+    {
+        "id" : 29,
+        "poet" : "凡河内躬恒 (Ooshikouchi no Mitsune) [859-925]",
+        "poem" : {
+            "original" : "心あてに　折らばや折らむ　初霜の　置きまどはせる　白菊の花",
+            "romaji" : "Kokoroate ni/Orabaya oran/Hatsushimo no/Oki madowaseru/Shiragiku no hana",
+            "crunchyroll" : "As the first frost has fallen, I can no longer tell which chrysanthemums to pluck."
+        }
+    },
+    {
+        "id" : 30,
+        "poet" : "壬生忠岑 (Mibu no Tadamine) [860-920]",
+        "poem" : {
+            "original" : "有り明けの　つれなく見えし　別れより　暁ばかり　憂きものはなし",
+            "romaji" : "Ariake no/Tsurenaku mieshi/Wakare yori/Akatsuki bakari/Uki mono wa nashi",
+            "crunchyroll" : "The sight of the lonely moon in the early morning reminds me of the lonely dawns after we parted."
+        }
+    },
+    {
+        "id" : 31,
+        "poet" : "坂上是則 (Sakanoue no Korenori) [Unknown-930]",
+        "poem" : {
+            "original" : "朝ぼらけ　有り明けの月と　見るまでに　吉野の里に　降れる白雪",
+            "romaji" : "Asaborake/Ariake no tsuki to/Miru made ni/Yoshino no sato ni/Fureru shirayuki",
+            "crunchyroll" : "The hazed early dawn light comes not from the moon but from the crystal white snow of Yoshino."
+        }
+    },
+    {
+        "id" : 32,
+        "poet" : "春道列樹 (Harumichi no Tsuraki) [Unknown-920]",
+        "poem" : {
+            "original" : "山川に　風のかけたる　柵は　流れもあへぬ　紅葉なりけり",
+            "romaji" : "Yama gawa ni/Kaze no kaketaru/Shigarami wa/Nagare mo aenu /Momiji nari keri",
+            "crunchyroll" : "A mountain stream dips [...] as helpless autumn leaves are caught against the flow."
+        }
+    },
+    {
+        "id" : 33,
+        "poet" : "紀友則 (Ki no Tomonori) [~845-907]",
+        "poem" : {
+            "original" : "久方の　光のどけき　春の日に　しづ心なく　花の散るらむ",
+            "romaji" : "Hisakata no/Hikari nodokeki/Haru no hi ni/Shizugokoro naku/Hana no chiruran",
+            "crunchyroll" : "In the sleepy spring sunlight, a whirlwind of flower petals descends."
+        }
+    },
+    {
+        "id" : 34,
+        "poet" : "藤原興風 (Fujiwara no Okikaze) [Unknown (active ~900-914)]",
+        "poem" : {
+            "original" : "誰をかも　知る人にせむ　高砂の　松も昔の　友ならなくに",
+            "romaji" : "Tare o ka mo/Shiru hito ni sen/Takasago no/Matsu mo mukashi no/Tomo nara naku ni",
+            "crunchyroll" : "None are left who know me. Takasago pines can never replace them."
+        }
+    },
+    {
+        "id" : 35,
+        "poet" : "紀貫之 (Ki no Tsurayuki) [~866-945]",
+        "poem" : {
+            "original" : "人はいさ　心も知らず　ふるさとは　花ぞ昔の　香ににほひける",
+            "romaji" : "Hito wa isa/Kokoro mo shirazu/Furusato wa/Hana zo mukashi no/Ka ni nioi keru",
+            "crunchyroll" : "In order for us to find our way home, the plum blossoms still smell the same."
+        }
+    },
+    {
+        "id" : 36,
+        "poet" : "清原深養父 (Kiyohara no Fukayabu) [Unknown (active ~908-930)]",
+        "poem" : {
+            "original" : "夏の夜は　まだ宵ながら　明けぬるを　雲のいづこに　月宿るらむ",
+            "romaji" : "Natsu no yo wa/Mada yoi nagara/Akenuru o/Kumo no izuko ni/Tsuki yadoruran",
+            "crunchyroll" : "May it be that I find the [...] before this short summer night fully breaks."
+        }
+    },
+    {
+        "id" : 37,
+        "poet" : "文屋朝康 (Fun'ya no Asayasu) [Unknown (active ~892-902)]",
+        "poem" : {
+            "original" : "白露に　風の吹きしく　秋の野は　貫き止めぬ　玉ぞ散りける",
+            "romaji" : "Shiratsuyu ni/Kaze no fukishiku/Aki no no wa/Tsuranuki tomenu/Tama zo chiri keru",
+            "crunchyroll" : "Since the dew atop the blades of grass has been scattered by the winds, it is as though pearls have been strung across the autumn plain."
+        }
+    },
+    {
+        "id" : 38,
+        "poet" : "右近 (Lady Ukon) [Unknown (active ~936-966)]",
+        "poem" : {
+            "original" : "忘らるる　身をば思はず　誓ひてし　人の命の　惜しくもあるかな",
+            "romaji" : "Wasuraruru/Mi o ba omowazu/Chikaite shi/Hito no inochi no/Oshiku mo aru kana",
+            "crunchyroll" : "My fear is not of being forgotten [...]"
+        }
+    },
+    {
+        "id" : 39,
+        "poet" : "参議等 (Minamoto no Hitoshi) [880-951]",
+        "poem" : {
+            "original" : "浅茅生の　小野の篠原　忍れど　あまりてなどか　人の恋しき",
+            "romaji" : "Asajiu no/Ono no shinohara/Shinoburedo/Amarite nado ka/Hito no koishiki",
+            "crunchyroll" : "The hazed field of reeds conceals clumps of bamboo shoots, but I cannot hide the love I feel for one who is so dear."
+        }
+    },
+    {
+        "id" : 40,
+        "poet" : "平兼盛 (Taira no Kanemori) [Unknown-991]",
+        "poem" : {
+            "original" : "忍れど　色に出でにけり　我が恋は　物や思ふと　人の問ふまで",
+            "romaji" : "Shinoburedo/Iro ni ide ni keri/Waga koi wa/Mono ya omou to/Hito no tou made",
+            "crunchyroll" : "Since I could not hide my love, people would always ask if I was pining for someone."
+        }
+    },
+    {
+        "id" : 41,
+        "poet" : "壬生忠見 (Mibu no Tadami) [Unknown (active ~954-960)]",
+        "poem" : {
+            "original" : "恋すてふ　我が名はまだき　立ちにけり　人知れずこそ　思ひ初めしか",
+            "romaji" : "Koisu chou/Waga na wa madaki/Tachi ni keri/Hito shirezu koso/Omoi someshi ka",
+            "crunchyroll" : "As my love first came to realization, word had already spread."
+        }
+    },
+    {
+        "id" : 42,
+        "poet" : "清原元輔 (Kiyohara no Motosuke) [908-990]",
+        "poem" : {
+            "original" : "契りきな　かたみに袖を　しぼりつつ　末の松山　波越さじとは",
+            "romaji" : "Chigiriki na/Katami ni sode o/Shibori tsutsu/Sue no Matsuyama/Nami kosaji to wa",
+            "crunchyroll" : "Impassioned vows exchanged over many a tear shed to last until the day waves crash over Mount Suenomatsu."
+        }
+    },
+    {
+        "id" : 43,
+        "poet" : "権中納言敦忠 (Fujiwara no Atsutada) [906-943]",
+        "poem" : {
+            "original" : "逢ひ見ての　後の心に　比ぶれば　昔は物を　思はざりけり",
+            "romaji" : "Ai mite no/Nochi no kokoro ni/Kurabureba/Mukashi wa mono o/Omowazari keri",
+            "crunchyroll" : "The emotions experienced after a long-awaited reunion banish any lingering memories of the past."
+        }
+    },
+    {
+        "id" : 44,
+        "poet" : "中納言朝忠 (Fujiwara no Asatada) [910-967]",
+        "poem" : {
+            "original" : "逢ふことの　絶えてしなくは　なかなかに　人をも身をも　恨みざらまし",
+            "romaji" : "Au koto no/Taete shi nakuwa/Nakanaka ni/Hito o mo mi o mo/Urami zaramashi",
+            "crunchyroll" : "While it pains me [...] would I rather never see her again?"
+        }
+    },
+    {
+        "id" : 45,
+        "poet" : "謙徳公 (Fujiwara no Koremasa) [924-972]",
+        "poem" : {
+            "original" : "あはれとも　いふべき人は　思ほえで　身のいたづらに　なりぬべきかな",
+            "romaji" : "Aware to mo/Iu beki hito wa/Omooede/Mi no itazura ni/Narinu beki kana",
+            "crunchyroll" : "The sound of people pitying [...]"
+        }
+    },
+    {
+        "id" : 46,
+        "poet" : "曾禰好忠 (Sone no Yoshitada) [Unknown (active ~985)]",
+        "poem" : {
+            "original" : "由良の門を　渡る舟人　かぢを絶え　ゆくへも知らぬ　恋の道かな",
+            "romaji" : "Yura no to o/Wataru funabito/Kaji o tae/Yukue mo shiranu/Koi no michi kana",
+            "crunchyroll" : "Like a boatsman adrift at the mouth of the Yura, I do not know where this love will take me."
+        }
+    },
+    {
+        "id" : 47,
+        "poet" : "恵慶法師 (Priest Egyou) [Unknown (active ~962-986)]",
+        "poem" : {
+            "original" : "八重葎　茂れる宿の　さびしきに　人こそ見えね　秋は来にけり",
+            "romaji" : "Yaemugura/Shigereru yado no/Sabishiki ni/Hito koso miene/Aki wa ki ni keri",
+            "crunchyroll" : "A house left to the weeds welcomes no visitors but for autumn's coming."
+        }
+    },
+    {
+        "id" : 48,
+        "poet" : "源重之 (Minamoto no Shigeyuki) [Unknown-1000]",
+        "poem" : {
+            "original" : "風をいたみ　岩打つ波の　おのれのみ　くだけて物を　思ふ頃かな",
+            "romaji" : "Kaze o itami/Iwa utsu nami no/Onore nomi/Kudakete mono o/Omou koro kana",
+            "crunchyroll" : "When winds send waves crashing against the rocks in vain, I recall how my own efforts were in vain."
+        }
+    },
+    {
+        "id" : 49,
+        "poet" : "大中臣能宣朝臣 (Oonakatomi no Yoshinobu) [921-991]",
+        "poem" : {
+            "original" : "みかき守　衛士のたく火の　夜は燃え　昼は消えつつ　物をこそ思へ",
+            "romaji" : "Mikakimori/Eji no taku hi no/Yoru wa moe/Hiru wa kie tsutsu/Mono o koso omoe",
+            "crunchyroll" : "I feel that my love is [...] burning brightly by night, yet extinguished by day."
+        }
+    },
+    {
+        "id" : 50,
+        "poet" : "藤原義孝 (Fujiwara no Yoshitaka) [954-974]",
+        "poem" : {
+            "original" : "君がため　惜しからざりし　命さへ　長くもがなと　思ひけるかな",
+            "romaji" : "Kimi ga tame/Oshi karazarishi/Inochi sae/Nagaku mo gana to/Omoi keru kana",
+            "crunchyroll" : "For you, I would have given up my life, now together, I guard it dear."
+        }
+    },
+    {
+        "id" : 51,
+        "poet" : "藤原実方朝臣 (Fujiwara no Sanekata) [Unknown-999]",
+        "poem" : {
+            "original" : "かくとだに　えやはいぶきの　さしも草　さしも知らじな　燃ゆる思ひを",
+            "romaji" : "Kaku to dani/Eyawa ibuki no/Sashimogusa/Sashimo shiraji na/Moyuru omoi o",
+            "crunchyroll" : "When I must hide these burning feelings, I feel as though my body is on fire with Ibuki mugwort."
+        }
+    },
+    {
+        "id" : 52,
+        "poet" : "藤原道信朝臣 (Fujiwara no Michinobu) [972-994]",
+        "poem" : {
+            "original" : "明けぬれば　暮るるものとは　知りながら　なほ恨めしき　朝ぼらけかな",
+            "romaji" : "Akenureba/Kururu mono to wa/Shiri nagara/Nao urameshiki/Asaborake kana",
+            "crunchyroll" : "The night breaks to day, and day turns to night, [...]"
+        }
+    },
+    {
+        "id" : 53,
+        "poet" : "右大将道綱母 (Mother of Michitsuna) [~936-995]",
+        "poem" : {
+            "original" : "嘆きつつ　独り寝る夜の　明くる間は　いかに久しき　ものとかは知る",
+            "romaji" : "Nageki tsutsu/Hitori nuru yo no/Akuru ma wa/Ikani hisashiki/Mono to ka wa shiru",
+            "crunchyroll" : "May my lonely nights in bed not be so long, though you have never known that pain."
+        }
+    },
+    {
+        "id" : 54,
+        "poet" : "儀同三司母 (Mother of Gidou Sanshi) [Unknown-996]",
+        "poem" : {
+            "original" : "忘れじの　行く末までは　難ければ　今日を限りの　命ともがな",
+            "romaji" : "Wasureji no/Yukusue made wa/Katakereba/Kyou o kagiri no/Inochi to mo gana",
+            "crunchyroll" : "My fear is that you will forget your promise to never forget me, so I would prefer to die now while I am still happy."
+        }
+    },
+    {
+        "id" : 55,
+        "poet" : "大納言公任 (Fujiwara no Kinto) [966-1041]",
+        "poem" : {
+            "original" : "滝の音は　絶えて久しく　なりぬれど　名こそ流れて　なほ聞こえけれ",
+            "romaji" : "Taki no oto wa/Taete hisashiku/Narinuredo/Na koso nagarete/Nao kikoe kere",
+            "crunchyroll" : "No more can we hear the sounds of the waterfall, but its legacy continues to spread."
+        }
+    },
+    {
+        "id" : 56,
+        "poet" : "和泉式部 (Lady Izumi Shikibu) [~976-~1020]",
+        "poem" : {
+            "original" : "あらざらむ　この世の外の　思ひ出に　今一度の　逢ふこともがな",
+            "romaji" : "Arazaran/Kono yo no hoka no/Omoiide ni/Ima hitotabi no/Au koto mo gana",
+            "crunchyroll" : "The storm will soon carry me to the afterlife, so I wish for a memory of you to take with me."
+        }
+    },
+    {
+        "id" : 57,
+        "poet" : "紫式部 (Lady Murasaki Shikibu) [~973-~1014]",
+        "poem" : {
+            "original" : "めぐり逢ひて　見しやそれとも　わかぬ間に　雲隠れにし　夜半の月かな",
+            "romaji" : "Meguri aite/Mishi ya sore to mo/Wakanu ma ni/Kumo gakure ni shi/Yowa no tsuki kage",
+            "crunchyroll" : "Long last we meet, only for me to leave hurriedly, for I could not recognize you, like the moon hidden behind the clouds."
+        }
+    },
+    {
+        "id" : 58,
+        "poet" : "大弐三位 (Daini no Sanmi) [~999-~1082]",
+        "poem" : {
+            "original" : "有馬山　猪名の笹原　風吹けば　いでそよ人を　忘れやはする",
+            "romaji" : "Arimayama/Ina no sasawara/Kaze fukeba/Ide soyo hito o/Wasure ya wa suru",
+            "crunchyroll" : "The sight of Mount Arima with the bamboo leaves fading across the plains makes me wonder how I ever let you fade from my mind."
+        }
+    },
+    {
+        "id" : 59,
+        "poet" : "赤染衛門 (Lady Akazome Emon) [~956-~1041]",
+        "poem" : {
+            "original" : "やすらはで　寝なましものを　さ夜更けて　傾くまでの　月を見しかな",
+            "romaji" : "Yasurawade/Nenamashi mono o/Sayo fukete/Katabuku made no/Tsuki o mishi kana",
+            "crunchyroll" : "A night spent waiting until the moon began to set in the west when I should have gone to sleep instead."
+        }
+    },
+    {
+        "id" : 60,
+        "poet" : "小式部内侍 (Koshikibu no Naishi) [~999-1025]",
+        "poem" : {
+            "original" : "大江山　いく野の道の　遠ければ　まだふみも見ず　天の橋立",
+            "romaji" : "Ooeyama/Ikuno no michi no/Too kereba/Mada fumi mo mizu/Ama no Hashidate",
+            "crunchyroll" : "While it brings me no joy, the road beyond Mount Oe is too long and I have yet to visit Amanohashidate or read my mother's letters."
+        }
+    },
+    {
+        "id" : 61,
+        "poet" : "伊勢大輔 (Ise no Taifu) [~989-~1060]",
+        "poem" : {
+            "original" : "いにしへの　奈良の都の　八重桜　今日九重に　匂ひぬるかな",
+            "romaji" : "Inishie no/Nara no miyako no/Yaezakura/Kyou kokonoe ni/Nioi nuru kana",
+            "crunchyroll" : "After many, many years [...] now bloom inside the nine-fold palace."
+        }
+    },
+    {
+        "id" : 62,
+        "poet" : "清少納言 (Sei Shounagon) [966-1025]",
+        "poem" : {
+            "original" : "夜をこめて　鳥の空音は　はかるとも　よに逢坂の　関は許さじ",
+            "romaji" : "Yo o komete/Tori no sorane wa/Hakaru tomo/Yo ni Ousaka no/Seki wa yurusaji",
+            "crunchyroll" : "Said night was young when the false rooster's crow, but the gates of Afusaka remained shut."
+        }
+    },
+    {
+        "id" : 63,
+        "poet" : "左京大夫道雅 (Fujiwara no Michimasa) [992-1054]",
+        "poem" : {
+            "original" : "今はただ　思ひ絶えなむ　とばかりを　人づてならで　いふよしもがな",
+            "romaji" : "Ima wa tada/Omoi taenan/To bakari wo/Hitozute nara de/Iu yoshi mo gana",
+            "crunchyroll" : "After I determined to abandon my love, my only regret is that I have no way to tell you in person."
+        }
+    },
+    {
+        "id" : 64,
+        "poet" : "権中納言定頼 (Fujiwara no Sadayori) [995-1045]",
+        "poem" : {
+            "original" : "朝ぼらけ　宇治の川霧　たえだえに　あらはれ渡る　瀬々の網代木",
+            "romaji" : "Asaborake/Uji no kawagiri/Taedae ni/Araware wataru/Seze no ajirogi",
+            "crunchyroll" : "The hazed early dawn mist over the Kawagiri River [...] nets in the shallows."
+        }
+    },
+    {
+        "id" : 65,
+        "poet" : "相模 (Lady Sagami) [~998-~1061]",
+        "poem" : {
+            "original" : "恨みわび　ほさぬ袖だに　あるものを　恋に朽ちなむ　名こそ惜しけれ",
+            "romaji" : "Urami wabi/Hosanu sode da ni/Aru mono o/Koi ni kuchinan/Na koso oshi kere",
+            "crunchyroll" : "Though my hatred has waned and the tears have dried from my sleeves, [...] that this love has also sullied my name."
+        }
+    },
+    {
+        "id" : 66,
+        "poet" : "前大僧正行尊 (High Priest Gyouson) [1055-1135]",
+        "poem" : {
+            "original" : "もろともに　あはれと思へ　山桜　花より外に　知る人もなし",
+            "romaji" : "Morotomo ni/Aware to omoe/Yamazakura/Hana yori hoka ni/Shiru hito mo nashi",
+            "crunchyroll" : "Would the mountain cherry blossoms return my affection, for there is no one else out here."
+        }
+    },
+    {
+        "id" : 67,
+        "poet" : "周防内侍 (Lady Suo no Naishi) [~1037-~1109]",
+        "poem" : {
+            "original" : "春の夜の　夢ばかりなる　手枕に　かひなく立たむ　名こそ惜しけれ",
+            "romaji" : "Haru no yo no/Yume bakari naru/Tamakura ni/Kainaku tatan/Na koso oshi kere",
+            "crunchyroll" : "So spring nights are short [...] if my name were sullied by such a brief tryst."
+        }
+    },
+    {
+        "id" : 68,
+        "poet" : "三条院 (Emperor Sanjou) [976-1017]",
+        "poem" : {
+            "original" : "心にも　あらで憂き世に　ながらへば　恋しかるべき　夜半の月かな",
+            "romaji" : "Kokoro ni mo/Arade ukiyo ni/Nagaraeba/Koishikaru beki/Yowa no tsuki kana",
+            "crunchyroll" : "As the years pass, I will find myself longing for the sight of a midnight moon."
+        }
+    },
+    {
+        "id" : 69,
+        "poet" : "能因法師 (Priest Nouin) [988-~1050]",
+        "poem" : {
+            "original" : "嵐吹く　三室の山の　もみぢ葉は　龍田の川の　錦なりけり",
+            "romaji" : "Arashi fuku/Mimuro no yama no/Momijiba wa/Tatsuta no kawa no/Nishiki nari keri",
+            "crunchyroll" : "The storm blasts autumn leaves of Mount Mimuro to set the Tatsuta River ablaze."
+        }
+    },
+    {
+        "id" : 70,
+        "poet" : "良暹法師 (Priest Ryouzen) [Unknown (active ~1038-1065)]",
+        "poem" : {
+            "original" : "さびしさに　宿を立ち出でて　眺むれば　いづこも同じ　秋の夕暮れ",
+            "romaji" : "Sabishisa ni/Yado o tachi idete/Nagamureba/Izuko mo onaji/Aki no yuugure",
+            "crunchyroll" : "All alone, I step outside my house seeking comfort, but there is only desolation under an autumn sunset."
+        }
+    },
+    {
+        "id" : 71,
+        "poet" : "大納言経信 (Minamoto no Tsunenobu) [1016-1097]",
+        "poem" : {
+            "original" : "夕されば　門田の稲葉　おとづれて　芦のまろやに　秋風ぞ吹く",
+            "romaji" : "Yuu sareba/Kadota no inaba/Otozurete/Ashi no maroya ni/Akikaze zo fuku",
+            "crunchyroll" : "Like the sound of someone knocking on my door, the thistle and brush are blown by the autumn wind."
+        }
+    },
+    {
+        "id" : 72,
+        "poet" : "祐子内親王家紀伊 (Lady Yuushi Naishonnou-ke no Kii) [Unknown (active ~1087-1109)]",
+        "poem" : {
+            "original" : "音に聞く　高師の浜の　あだ波は　かけじや袖の　濡れもこそすれ",
+            "romaji" : "Oto ni kiku/Takashi no hama no/Adanami wa/Kakeji ya sode no/Nure mo koso sure",
+            "crunchyroll" : "While some dodge the famous waves of Takashi shore to avoid getting wet, I deflect your artful words to keep my sleeves dry."
+        }
+    },
+    {
+        "id" : 73,
+        "poet" : "前中納言匡房 (Ooe no Masafusa) [1041-1111]",
+        "poem" : {
+            "original" : "高砂の　尾の上の桜　咲きにけり　外山の霞　たたずもあらなむ",
+            "romaji" : "Takasago no/Onoe no sakura/Saki ni keri/Toyama no kasumi/Tatazu mo aranan",
+            "crunchyroll" : "Nobody wishes to see the beautiful cherry blossoms covered by the smoky mountain fog."
+        }
+    },
+    {
+        "id" : 74,
+        "poet" : "源俊頼朝臣 (Minamoto no Toshiyori) [1055-1129]",
+        "poem" : {
+            "original" : "うかりける　人を初瀬の　山おろしよ　はげしかれとは　祈らぬものを",
+            "romaji" : "Ukari keru/Hito o Hatsuse no/Yama oroshiyo/Hageshikare to wa/Inoranu mono o",
+            "crunchyroll" : "Though I prayed to the god of mercy that the one I love not shun me, I never asked to be treated colder than the winds of Mount Hatsuse."
+        }
+    },
+    {
+        "id" : 75,
+        "poet" : "藤原基俊 (Fujiwara no Mototoshi) [1060-1142]",
+        "poem" : {
+            "original" : "契りおきし　させもが露を　命にて　あはれ今年の　秋もいぬめり",
+            "romaji" : "Chigiri okishi/Sasemo ga tsuyu o/Inochi ni te/Aware kotoshi no/Aki mo inumeri",
+            "crunchyroll" : "Impassioned was your promise of salvation. Alas, another autumn has passed in vain."
+        }
+    },
+    {
+        "id" : 76,
+        "poet" : "法性寺入道前関白太政大臣 (Fujiwara no Tadamichi) [1097-1164]",
+        "poem" : {
+            "original" : "わたの原　漕ぎ出でて見れば　久方の　雲居にまがふ　沖つ白波",
+            "romaji" : "Wata no hara/Kogi idete mireba/Hisakata no/Kumoi ni magau/Okitsu shiranami",
+            "crunchyroll" : "My only thought as the boat takes me out to sea is that the cresting waves almost look like clouds in the skies."
+        }
+    },
+    {
+        "id" : 77,
+        "poet" : "崇徳院 (Emperor Sutoku) [1119-1164]",
+        "poem" : {
+            "original" : "瀬を早み　岩にせかるる　滝川の　われても末に　あはむとぞ思ふ",
+            "romaji" : "Se o hayami/Iwa ni sekaruru/Takigawa no/Warete mo sue ni/Awan to zo omou",
+            "crunchyroll" : "Swift waters parted by the jagged rocks, are joined at river's end."
+        }
+    },
+    {
+        "id" : 78,
+        "poet" : "源兼昌 (Minamoto no Kanemasa) [Unknown (active ~1100-1128)]",
+        "poem" : {
+            "original" : "淡路島　通ふ千鳥の　鳴く声に　幾夜寝覚めぬ　須磨の関守",
+            "romaji" : "Awaji shima/Kayou chidori no/Naku koe ni/Ikuyo nezamenu/Suma no sekimori",
+            "crunchyroll" : "The sound of birds crossing from Awaji Island awakens the guards of Suma Gate at night."
+        }
+    },
+    {
+        "id" : 79,
+        "poet" : "左京大夫顕輔 (Fujiwara no Akisuke) [1090-1155]",
+        "poem" : {
+            "original" : "秋風に　たなびく雲の　絶え間より　もれ出づる月の　影のさやけさ",
+            "romaji" : "Akikaze ni/Tanabiku kumo no/Taema yori/More izuru tsuki no/Kage no sayakesa",
+            "crunchyroll" : "The fall wind parts the wispy clouds to reveal moonlight, clear and bright."
+        }
+    },
+    {
+        "id" : 80,
+        "poet" : "待賢門院堀河 (Lady Taikenmon-in no Horikawa) [Unknown (active ~1142)]",
+        "poem" : {
+            "original" : "長からむ　心も知らず　黒髪の　乱れてけさは　物をこそ思へ",
+            "romaji" : "Nagakaran/Kokoro mo shirazu/Kurokami no/Midarete kesa wa/Mono o koso omoe",
+            "crunchyroll" : "May I see you never forget your promise to always love me, as my concern this morning is as tangled as my black hair."
+        }
+    },
+    {
+        "id" : 81,
+        "poet" : "後徳大寺左大臣 (Fujiwara no Sanesada) [1139-1192]",
+        "poem" : {
+            "original" : "ほととぎす　鳴きつる方を　眺むれば　ただ有り明けの　月ぞ残れる",
+            "romaji" : "Hototogisu/Nakitsuru kata o/Nagamureba/Tada ariake no/Tsuki zo nokoreru",
+            "crunchyroll" : "Look for the sound of the cuckoo but instead you see a pale moon in the dawn sky."
+        }
+    },
+    {
+        "id" : 82,
+        "poet" : "道因法師 (Priest Douin) [1090-~1179]",
+        "poem" : {
+            "original" : "思ひわび　さても命は　あるものを　憂きにたへぬは　涙なりけり",
+            "romaji" : "Omoi wabi/Satemo inochi wa/Aru mono o/Uki ni taenu wa/Namida nari keri",
+            "crunchyroll" : "While I sigh and lament the one I love does not feel the same, only tears can bring relief in this cruel life."
+        }
+    },
+    {
+        "id" : 83,
+        "poet" : "皇太后宮大夫俊成 (Fujiwara no Shunzei) [1114-1204]",
+        "poem" : {
+            "original" : "世の中よ　道こそなけれ　思ひ入る　山の奥にも　鹿ぞ鳴くなる",
+            "romaji" : "Yo no naka yo/Michi koso nakere/Omoi iru/Yama no oku ni mo/Shika zo naku naru",
+            "crunchyroll" : "Said world grants no escape, I hide in the mountains, only to hear the haunting cry of a deer."
+        }
+    },
+    {
+        "id" : 84,
+        "poet" : "藤原清輔朝臣 (Fujiwara no Kiyosuke) [1104-1177]",
+        "poem" : {
+            "original" : "ながらへば　またこの頃や　忍ばれむ　憂しと見し世ぞ　今は恋しき",
+            "romaji" : "Nagaraeba/Mata konogoro ya/Shinobaren/Ushi to mishi yo zo/Ima wa koishiki",
+            "crunchyroll" : "May I live to see the day when I long for the agony I feel now."
+        }
+    },
+    {
+        "id" : 85,
+        "poet" : "俊恵法師 (Priest Shun'e) [1113-~1191]",
+        "poem" : {
+            "original" : "夜もすがら　物思ふ頃は　明けやらで　閏のひまさへ　つれなかりけり",
+            "romaji" : "Yo mo sugara/Mono omou koro wa/Ake yaranu/Neya no hima sae/Tsure nakari keri",
+            "crunchyroll" : "Said bed was cold as I lay awake for the night would drag on when I thought of my beloved."
+        }
+    },
+    {
+        "id" : 86,
+        "poet" : "西行法師 (Priest Saigyou) [1118-1190]",
+        "poem" : {
+            "original" : "嘆けとて　月やは物を　思はする　かこち顔なる　わが涙かな",
+            "romaji" : "Nageke tote/Tsuki ya wa mono o/Omowasuru/Kakochi gao naru/Waga namida kana",
+            "crunchyroll" : "May my sighs be blamed upon the moon, or do my tears come from the feelings it invokes?"
+        }
+    },
+    {
+        "id" : 87,
+        "poet" : "寂蓮法師 (Priest Jakuren) [1139-1202]",
+        "poem" : {
+            "original" : "村雨の　露もまだ干ぬ　槇の葉に　霧立ちのぼる　秋の夕暮れ",
+            "romaji" : "Murasame no/Tsuyu mo mada hinu/Maki no ha ni/Kiri tachinoboru/Aki no yugure",
+            "crunchyroll" : "Rain takes longer to dry in the autumn time, leaving a hovering mist above the trees and grass."
+        }
+    },
+    {
+        "id" : 88,
+        "poet" : "皇嘉門院別当 (Attendant to Empress Kouka) [Unknown (active ~1175-1182)]",
+        "poem" : {
+            "original" : "難波江の　芦のかりねの　ひとよゆゑ　みをつくしてや　恋ひわたるべき",
+            "romaji" : "Naniwae no/Ashi no karine no/Hitoyo yue/Mi o tsukushite ya/Koi wataru beki",
+            "crunchyroll" : "May the time spent in our one night together bring a life of everlasting love."
+        }
+    },
+    {
+        "id" : 89,
+        "poet" : "式子内親王 (Princess Shokushi) [1149-1201]",
+        "poem" : {
+            "original" : "玉の緒よ　絶えなば絶えね　ながらへば　忍ぶることの　弱りもぞする",
+            "romaji" : "Tama no o yo/Taenaba taene/Nagaraeba/Shinoburu koto no/Yowari mo zo suru",
+            "crunchyroll" : "Nothing can be worse than living a moment longer when I cannot bear growing weaker than I already have."
+        }
+    },
+    {
+        "id" : 90,
+        "poet" : "殷富門院大輔 (Attendant to Empress Inpu) [1130-1200]",
+        "poem" : {
+            "original" : "見せばやな　雄島の海人の　袖だにも　濡れにぞ濡れし　色は変はらず",
+            "romaji" : "Misebaya na/Ojima no ama no/Sode dani mo/Nure ni zo nureshi/Iro wa kawarazu",
+            "crunchyroll" : "I wish I could show the people how my sleeves have been soaked red with tears of blood."
+        }
+    },
+    {
+        "id" : 91,
+        "poet" : "後京極摂政前太政大臣 (Kujou Yoshitsune) [1169-1206]",
+        "poem" : {
+            "original" : "きりぎりす　鳴くや霜夜の　さむしろに　衣かたしき　ひとりかも寝む",
+            "romaji" : "Kirigirisu/Naku ya shimo yo no/Samushiro ni/Koromo katashiki/Hitori kamo nen",
+            "crunchyroll" : "For the cold nights when crickets are chirping, [...]"
+        }
+    },
+    {
+        "id" : 92,
+        "poet" : "二条院讃岐 (Lady Sanuki) [~1141-1217]",
+        "poem" : {
+            "original" : "わが袖は　潮干に見えぬ　沖の石の　人こそ知らね　乾く間もなし",
+            "romaji" : "Waga sode wa/Shiohi ni mienu/Oki no ishi no/Hito koso shirane/Kawaku ma mo nashi",
+            "crunchyroll" : "My own sleeves are like the sands at the edge of the ebbing tide, [...]"
+        }
+    },
+    {
+        "id" : 93,
+        "poet" : "鎌倉右大臣 (Minamoto no Sanetomo) [1192-1219]",
+        "poem" : {
+            "original" : "世の中は　常にもがもな　渚漕ぐ　海人の小舟の　綱手かなしも",
+            "romaji" : "Yo no naka wa/Tsune ni mo ga mo na/Nagisa kogu/Ama no obune no/Tsuna de kanashi mo",
+            "crunchyroll" : "Said world grants no change, I pray, when the fisherman who casts his nets can seem dear."
+        }
+    },
+    {
+        "id" : 94,
+        "poet" : "参議雅経 (Asukai Masatsune) [1170-1221]",
+        "poem" : {
+            "original" : "み吉野の　山の秋風　さ夜更けて　ふるさと寒く　衣打つなり",
+            "romaji" : "Miyoshino no/Yama no akikaze/Sayo fukete/Furusato samuku/Koromo utsu nari",
+            "crunchyroll" : "I hear the beating of cloth, as a chilly autumn breeze descends from Mount Yoshino upon my long-forgotten home."
+        }
+    },
+    {
+        "id" : 95,
+        "poet" : "前大僧正慈円 (High Priest Jien) [1155-1225]",
+        "poem" : {
+            "original" : "おほけなく　うき世の民に　覆ふかな　我が立つ杣に　墨染の袖",
+            "romaji" : "Ookenaku/Ukiyo no tami ni/Oou kana/Waga tatsu soma ni/Sumizome no sode",
+            "crunchyroll" : "While it may be beyond my ability, I volunteer to shield the people with my dark sleeves."
+        }
+    },
+    {
+        "id" : 96,
+        "poet" : "入道前太政大臣 (Saionji Kintsune) [1171-1244]",
+        "poem" : {
+            "original" : "花さそふ　嵐の庭の　雪ならで　ふりゆくものは　我が身なりけり",
+            "romaji" : "Hana sasou/Arashi no niwa no/Yuki nara de/Furi yuku mono wa/Waga mi nari keri",
+            "crunchyroll" : "So the flower petals are scattered like the snow by the passing storm, yet it is I who withers and wilts."
+        }
+    },
+    {
+        "id" : 97,
+        "poet" : "権中納言定家 (Fujiwara no Teika) [1162-1241]",
+        "poem" : {
+            "original" : "来ぬ人を　松帆の浦の　夕凪に　焼くや藻塩の　身もこがれつつ",
+            "romaji" : "Konu hito o/Matsubo no ura no/Yuunagi ni/Yaku ya moshio no/Mi mo kogare tsutsu",
+            "crunchyroll" : "As I wait for someone who will never come, my body burns like the seaweed drying on the shores of Matsuho."
+        }
+    },
+    {
+        "id" : 98,
+        "poet" : "従二位家隆 (Fujiwara no Ietaka) [1158-1237]",
+        "poem" : {
+            "original" : "風そよぐ　ならの小川の　夕暮れは　みそぎぞ夏の　しるしなりける",
+            "romaji" : "Kaze soyogu/Nara no ogawa no/Yuugure wa/Misogi zo natsu no/Shirushi nari keru",
+            "crunchyroll" : "When winds blow oak leaves in the twilight, the only sign of summer is the ritual purification in the waters."
+        }
+    },
+    {
+        "id" : 99,
+        "poet" : "後鳥羽院 (Emperor Gotoba) [1180-1239]",
+        "poem" : {
+            "original" : "人も惜し　人も恨めし　あぢきなく　世を思ふ故に　もの思ふ身は",
+            "romaji" : "Hito mo oshi/Hito mo urameshi/Ajiki naku/Yo o omou yue ni/Mono omou mi wa",
+            "crunchyroll" : "In order to restore my faith in this world, I have learned to both love and hate my fellow man."
+        }
+    },
+    {
+        "id" : 100,
+        "poet" : "順徳院 (Emperor Juntoku) [1197-1242]",
+        "poem" : {
+            "original" : "ももしきや　古き軒端の　しのぶにも　なほあまりある　昔なりけり",
+            "romaji" : "Momoshiki ya/Furuki nokiba no/Shinobu ni mo/Nao amari aru/Mukashi nari keri",
+            "crunchyroll" : "Would this old palace courtyard and the eaves strewn with weeds be as dear now, those were the good old days."
+        }
+    },
+    {
+        "id" : 101,
+        "poet" : "額田王 (Princess Nukata) [630-690]",
+        "poem" : {
+            "original" : "あかねさす　紫野行き　標野行き　野守は見ずや　君が袖振る",
+            "romaji" : "Akane sasu/Murasaki no yuki/Shimeno yuki/Nomori wa mizu ya/Kimi ga sode furu",
+            "crunchyroll" : "The crimson sunset sets these forbidden fields aglow. Wave not, for the guards may find us."
+        }
+    }
+]

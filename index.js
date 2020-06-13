@@ -18,6 +18,7 @@ yuuko
 	.extendContext({yuuko})
 	.addCommandDir(path.join(__dirname, 'general'))
 	.addCommandDir(path.join(__dirname, 'anime'))
+	.addCommandDir(path.join(__dirname, 'chihayafuru'))
 	.connect();
 
 yuuko.once('ready', () => {
