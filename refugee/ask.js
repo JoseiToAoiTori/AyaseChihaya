@@ -11,7 +11,7 @@ try {
 
 module.exports = new Command('ask', async (message, args) => {
 	const owner = config.owner || process.env.OWNER;
-	if (message.author.id !== owner && message.author.id !== '127506802794299393') return;
+	if ((message.author.id !== owner && message.author.id !== '127506802794299393') || args.length < 1) return;
 	const question = args.join(' ');
 	const qMessage = await message.channel.createMessage(question);
 	await qMessage.addReaction('poutthesun:703254550705995888');

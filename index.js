@@ -29,6 +29,12 @@ yuuko.once('ready', () => {
 	console.log('Successfully connected to Discord.');
 });
 
+yuuko.editStatus('online', {
+	name: 'karuta',
+	type: 0,
+	url: 'https://github.com/JoseiToAoiTori/AyaseChihaya',
+});
+
 yuuko.on('messageCreate', message => {
 	if (message.content.toLowerCase().includes('top 10 reasons') && (message.guildID === '514203145333899276' || message.guildID === '386933744025468939')) {
 		message.channel.createMessage(`1. You can help people out
