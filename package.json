@@ -12,6 +12,7 @@
     "eris-reactions": "^0.1.2",
     "eslint": "^7.2.0",
     "fuse.js": "^6.0.4",
+    "snoowrap": "^1.21.0",
     "superagent": "^5.2.2",
     "turndown": "^6.0.0",
     "yuuko": "^2.0.0"

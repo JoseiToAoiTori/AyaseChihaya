@@ -65,7 +65,7 @@ module.exports = new Command('help', message => {
 				value: 'Returns 4th ED of closest match for show name or theme name provided. Nagareboshi Kirari can be used instead of Hunter x Hunter for same results.',
 			}],
 			footer: {
-				text: 'This is a bot developed by Heather ★#6868 (/u/EpicTroll27). Hyakunin Isshu data has been compiled by Shiara#0001 (/u/walking_the_way).',
+				text: 'This is a bot developed by Heather ★#6868 (/u/JoseiToAoiTori). Hyakunin Isshu data has been compiled by Shiara#0001 (/u/walking_the_way).',
 				icon_url: config.avatar || process.env.AVATAR,
 			},
 		},

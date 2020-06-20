@@ -34,13 +34,13 @@ module.exports = new Command('theme', (message, args) => {
 	} else {
 		let filteredThemes;
 		let search;
-		if (/(?:op|ed)[0-9]+v[0-9]+/.test(args[0].toLowerCase())) {
-			const opType = args[0].substring(0, 2).toUpperCase();
-			let opNum = args[0].match(/[0-9]+(?:v|V)/)[0];
+		if (/(?:op|ed)[0-9]+v[0-9]+/.test(args[args.length - 1].toLowerCase())) {
+			const opType = args[args.length - 1].substring(0, 2).toUpperCase();
+			let opNum = args[args.length - 1].match(/[0-9]+(?:v|V)/)[0];
 			opNum = opNum.substring(0, opNum.length - 1);
 			// eslint-disable-next-line eqeqeq
 			if (opNum == '1') opNum = '';
-			let opVer = args[0].match(/(?:v|V)[0-9]+/)[0];
+			let opVer = args[args.length - 1].match(/(?:v|V)[0-9]+/)[0];
 			opVer = opVer.substring(1, opVer.length);
 			const opFilter = `${opType}${opNum}v${opVer}`;
 			filteredThemes = themes.filter(theme => theme.opNum === opFilter);
@@ -53,11 +53,11 @@ module.exports = new Command('theme', (message, args) => {
 				});
 				return;
 			}
-			args.splice(0, 1);
+			args.splice(args.length - 1, 1);
 			search = args.join(' ');
-		} else if (/(?:op|ed)v[0-9]+/.test(args[0].toLowerCase())) {
-			const opType = args[0].substring(0, 2).toUpperCase();
-			let opVer = args[0].match(/(?:v|V)[0-9]+/)[0];
+		} else if (/(?:op|ed)v[0-9]+/.test(args[args.length - 1].toLowerCase())) {
+			const opType = args[args.length - 1].substring(0, 2).toUpperCase();
+			let opVer = args[args.length - 1].match(/(?:v|V)[0-9]+/)[0];
 			opVer = opVer.substring(1, opVer.length);
 			const opFilter = `${opType}v${opVer}`;
 			filteredThemes = themes.filter(theme => theme.opNum === opFilter);
@@ -70,13 +70,13 @@ module.exports = new Command('theme', (message, args) => {
 				});
 				return;
 			}
-			args.splice(0, 1);
+			args.splice(args.length - 1, 1);
 			search = args.join(' ');
-		} else if (/^(?:op|ed)[0-9]*$/.test(args[0].toLowerCase())) {
-			const opType = args[0].substring(0, 2).toUpperCase();
+		} else if (/^(?:op|ed)[0-9]*$/.test(args[args.length - 1].toLowerCase())) {
+			const opType = args[args.length - 1].substring(0, 2).toUpperCase();
 			let opNum = '';
-			if (args[0].length > 2) {
-				opNum = args[0].match(/[0-9]+/);
+			if (args[args.length - 1].length > 2) {
+				opNum = args[args.length - 1].match(/[0-9]+/);
 				// eslint-disable-next-line eqeqeq
 				if (opNum == '1') opNum = '';
 			}
@@ -91,7 +91,7 @@ module.exports = new Command('theme', (message, args) => {
 				});
 				return;
 			}
-			args.splice(0, 1);
+			args.splice(args.length - 1, 1);
 			search = args.join(' ');
 		} else {
 			filteredThemes = themes;

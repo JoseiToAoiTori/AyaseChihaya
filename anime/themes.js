@@ -27,7 +27,7 @@ try {
 function stringifyThemes (themeArr) {
 	let string = '';
 	for (let i = 0; i < themeArr.length; i++) {
-		string += `[${i + 1}. ${themeArr[i].item.anime} ${themeArr[i].item.opNum}](${themeArr[i].item.link})\n`;
+		string += `${i + 1}. [${themeArr[i].item.anime} ${themeArr[i].item.opNum} - ${themeArr[i].item.opName}](${themeArr[i].item.link})\n`;
 	}
 	return string;
 }
@@ -37,7 +37,7 @@ module.exports = new Command('themes', (message, args) => {
 	const fuse = new Fuse(themes, options);
 	let result = fuse.search(search);
 	if (result.length) {
-		result = result.slice(0, 10);
+		if (result.length > 15) result = result.slice(0, 15);
 		const embed = {
 			embed: {
 				title: 'Your Search Results',
