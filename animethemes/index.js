@@ -31,7 +31,7 @@ function getThemes (anime, page, mal) {
 		tableContent.splice(0, 1);
 		tableContent = tableContent.join(anime);
 	}
-	tableContent = tableContent.split('-|:-:|:-:|:-:|:-:|:-:')[1];
+	tableContent = tableContent.split(/-\|:-:\|:-:\|:-:\|:-:\|:-:|-\|:-:\|:-:\|:-:/)[1];
 	tableContent = tableContent.split(/\r?\n\r?\n\r?/gm)[0];
 	const themes = tableContent.split(/\r?\n/);
 	if (themes[0].length === 0) themes.splice(0, 1);
