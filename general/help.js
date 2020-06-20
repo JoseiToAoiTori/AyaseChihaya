@@ -61,11 +61,11 @@ module.exports = new Command('help', message => {
 				value: 'Returns the best match for the combination of anime and theme name.',
 			},
 			{
-				name: ';theme ed4 hunter x hunter',
-				value: 'Returns 4th ED of closest match for show name or theme name provided. Nagareboshi Kirari can be used instead of Hunter x Hunter for same results.',
+				name: ';theme hunter x hunter ed4',
+				value: 'Returns 4th ED of closest match for show name or theme name provided. For in-depth usage of this command, refer to this: https://github.com/JoseiToAoiTori/AyaseChihaya/wiki/Theme-Commands-Explanation',
 			}],
 			footer: {
-				text: 'This is a bot developed by Heather ★#6868 (/u/JoseiToAoiTori). Hyakunin Isshu data has been compiled by Shiara#0001 (/u/walking_the_way).',
+				text: 'This is a bot developed by Heather ★#6868 (/u/JoseiToAoiTori). Hyakunin Isshu data has been compiled by Shiara#0001 (/u/walking_the_way). Data for AnimeThemes was very poorly scraped from /r/AnimeThemes.',
 				icon_url: config.avatar || process.env.AVATAR,
 			},
 		},
