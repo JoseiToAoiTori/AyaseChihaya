@@ -25,7 +25,7 @@ try {
 	config = {};
 }
 
-function poemFinder(args) {
+function poemFinder (args) {
 	const fuse = new Fuse(hi, options);
 	const result = fuse.search(args);
 	if (result.length) {
@@ -45,6 +45,7 @@ module.exports = new Command('poem', (message, args) => {
 		return;
 	}
 	const found = poemFinder(args.join(' '));
+	// eslint-disable-next-line no-negated-condition
 	if (!found) {
 		message.channel.createMessage({
 			embed: {
@@ -53,7 +54,7 @@ module.exports = new Command('poem', (message, args) => {
 			},
 		});
 	} else {
-		let embed = {
+		const embed = {
 			embed: {
 				color: config.colour || process.env.COLOUR,
 				thumbnail: {
