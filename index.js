@@ -48,7 +48,7 @@ yuuko.on('messageCreate', message => {
 9. Beautiful!!
 10. Yay!!!`);
 	}
-	if (message.content.toLowerCase().includes('antifa') && chance.bool({likelihood: 35})) {
+	if (message.content.toLowerCase().includes('antifa') && chance.bool({likelihood: 25})) {
 		message.channel.createMessage('T E R R O R I S T  O R G A N I Z A T I O N');
 	}
 });
