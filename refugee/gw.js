@@ -10,9 +10,9 @@ try {
 
 module.exports = new Command('gw', async (message, args, {yuuko}) => {
 	if (message.guildID !== '514203145333899276' && message.guildID !== '386933744025468939') return;
-	Promise.all([yuuko.getMessage('514249693228826626','714785577521643537'), yuuko.getMessage('514249693228826626','714788003624779806')]).then(messages => {
+	Promise.all([yuuko.getMessage('514249693228826626', '714785577521643537'), yuuko.getMessage('514249693228826626', '714788003624779806')]).then(messages => {
 		const regex = /^(.+?): (.*) \((.*)\)/gm;
-		let embed = {
+		const embed = {
 			embed: {
 				color: config.colour || process.env.COLOUR,
 				author: {
@@ -38,8 +38,7 @@ module.exports = new Command('gw', async (message, args, {yuuko}) => {
 			if (m.index === regex.lastIndex) {
 				regex.lastIndex++;
 			}
-			let watch, show, time;
-			
+			let watch; let show; let time;
 			// The result can be accessed through the `m`-variable.
 			// eslint-disable-next-line no-undef
 			m.forEach((match, groupIndex) => {
