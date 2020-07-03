@@ -3,6 +3,9 @@ const path = require('path');
 
 const Chance = require('chance');
 const chance = new Chance();
+const ReactionHandler = require('eris-reactions');
+
+const rrConfig = require('./reactRoles.json');
 
 let config;
 
@@ -25,8 +28,35 @@ yuuko
 	.addCommandDir(path.join(__dirname, 'refugee'))
 	.connect();
 
-yuuko.once('ready', () => {
+yuuko.once('ready', async () => {
 	console.log('Successfully connected to Discord.');
+	if (rrConfig.channelID && rrConfig.messageID && rrConfig.guildID) {
+		const msg = await yuuko.getMessage(rrConfig.channelID, rrConfig.messageID);
+		for (const react of rrConfig.reactRoles) {
+		// eslint-disable-next-line no-await-in-loop
+			await msg.addReaction(react.emote);
+		}
+		// eslint-disable-next-line new-cap
+		const reactionListener = new ReactionHandler.continuousReactionStream(
+			msg,
+			userID => userID !== msg.author.id,
+			true,
+		);
+		reactionListener.on('reacted', async event => {
+			const reactRole = rrConfig.reactRoles.find(rr => rr.emote === `:${event.emoji.name}:${event.emoji.id}`);
+			const memberRoles = msg.channel.guild.members.get(event.userID).roles;
+			const found = memberRoles.find(role => role === reactRole.roleID);
+			if (found) {
+				await yuuko.removeGuildMemberRole(rrConfig.guildID, event.userID, reactRole.roleID, 'react role through Chihaya');
+				const dmChannel = await yuuko.getDMChannel(event.userID);
+				dmChannel.createMessage(`You no longer have access to the <#${reactRole.channel}> channel.`);
+			} else {
+				await yuuko.addGuildMemberRole(rrConfig.guildID, event.userID, reactRole.roleID, 'react role through Chihaya');
+				const dmChannel = await yuuko.getDMChannel(event.userID);
+				dmChannel.createMessage(`You now have access to the <#${reactRole.channel}> channel. To revoke access, simply react again.`);
+			}
+		});
+	}
 });
 
 yuuko.editStatus('online', {
