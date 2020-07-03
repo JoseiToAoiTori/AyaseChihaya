@@ -6,6 +6,9 @@
   "repository": "https://github.com/JoseiToAoiTori/AyaseChihaya.git",
   "author": "JoseiToAoiTori",
   "license": "MIT",
+  "scripts": {
+    "start": "node animethemes/index && node ."
+  },
   "dependencies": {
     "chance": "^1.1.6",
     "eris": "^0.13.1",

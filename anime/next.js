@@ -31,15 +31,23 @@ const singleQuery = `query ($page: Int) {
 	  }
 	}
   }`;
-const bigQuery = `query ($search: String, $status: MediaStatus) {
-	Media(type:ANIME status:$status search:$search) {
-		id
-		siteUrl
-		coverImage { large }
-		title { romaji }
-		nextAiringEpisode { episode timeUntilAiring }
+const bigQuery = `query ($search: String, $status: [MediaStatus]) {
+	Media(type: ANIME, search: $search, sort: SEARCH_MATCH, status_in: $status) {
+	  id
+	  siteUrl
+	  coverImage {
+		large
+	  }
+	  title {
+		romaji
+	  }
+	  nextAiringEpisode {
+		episode
+		timeUntilAiring
+	  }
 	}
-}`;
+  }
+  `;
 
 module.exports = new Command('next', async (message, args) => {
 	if (args.length < 1) {
@@ -55,7 +63,7 @@ module.exports = new Command('next', async (message, args) => {
 			message.channel.createMessage(`${error}`);
 			return;
 		}
-		let lastPage = data.body.data.Page.pageInfo.lastPage;
+		const lastPage = data.body.data.Page.pageInfo.lastPage;
 		data = data.body.data.Page.media;
 		page++;
 		while (page <= lastPage) {
@@ -102,7 +110,7 @@ module.exports = new Command('next', async (message, args) => {
 		try {
 			data = await superagent
 				.post('https://graphql.anilist.co')
-				.send({query: bigQuery, variables: {status: 'RELEASING', search}})
+				.send({query: bigQuery, variables: {status: ['RELEASING', 'NOT_YET_RELEASED'], search}})
 				.set('accept', 'json');
 		} catch (error) {
 			message.channel.createMessage(`${error}`);
