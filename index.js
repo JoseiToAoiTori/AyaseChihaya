@@ -43,7 +43,7 @@ yuuko.once('ready', async () => {
 			true,
 		);
 		reactionListener.on('reacted', async event => {
-			const reactRole = rrConfig.reactRoles.find(rr => rr.emote === `:${event.emoji.name}:${event.emoji.id}`);
+			const reactRole = rrConfig.reactRoles.find(rr => rr.emote === `:${event.emoji.name}:${event.emoji.id}` || rr.emote === event.emoji.name);
 			const memberRoles = msg.channel.guild.members.get(event.userID).roles;
 			const found = memberRoles.find(role => role === reactRole.roleID);
 			if (found) {
