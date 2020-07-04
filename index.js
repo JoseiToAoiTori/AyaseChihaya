@@ -33,8 +33,11 @@ yuuko.once('ready', async () => {
 	if (rrConfig.channelID && rrConfig.messageID && rrConfig.guildID) {
 		const msg = await yuuko.getMessage(rrConfig.channelID, rrConfig.messageID);
 		for (const react of rrConfig.reactRoles) {
-		// eslint-disable-next-line no-await-in-loop
-			await msg.addReaction(react.emote);
+			if (!msg.reactions[react.emote]) {
+				// eslint-disable-next-line no-await-in-loop
+				await msg.addReaction(react.emote);
+				console.log('emote created');
+			}
 		}
 		// eslint-disable-next-line new-cap
 		const reactionListener = new ReactionHandler.continuousReactionStream(
@@ -42,6 +45,7 @@ yuuko.once('ready', async () => {
 			userID => userID !== msg.author.id,
 			true,
 		);
+		console.log('Listening for reactions');
 		reactionListener.on('reacted', async event => {
 			const reactRole = rrConfig.reactRoles.find(rr => rr.emote === `:${event.emoji.name}:${event.emoji.id}` || rr.emote === event.emoji.name);
 			const memberRoles = msg.channel.guild.members.get(event.userID).roles;
