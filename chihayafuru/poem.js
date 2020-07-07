@@ -35,10 +35,10 @@ function poemFinder (args) {
 }
 
 module.exports = new Command('poem', (message, args) => {
-	if (args.length < 1) {
+	if (args.length < 1 || args.length > 50) {
 		message.channel.createMessage({
 			embed: {
-				title: 'Please enter search terms.',
+				title: 'Invalid arguments',
 				color: config.colour || process.env.COLOUR,
 			},
 		});

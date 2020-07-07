@@ -12,10 +12,7 @@ const options = {
 	keys: [
 		'opName',
 		'anime',
-		'anime.romaji',
-		'anime.native',
-		'anime.userPreferred',
-		'anime.english',
+		'synonyms',
 		'opNum',
 	],
 };
@@ -29,10 +26,10 @@ try {
 }
 
 module.exports = new Command('theme', (message, args) => {
-	if (args.length < 1) {
+	if (args.length < 1 || args.length > 50) {
 		message.channel.createMessage({
 			embed: {
-				title: 'Please enter more arguments',
+				title: 'Invalid arguments',
 				color: config.colour || process.env.COLOUR,
 			},
 		});

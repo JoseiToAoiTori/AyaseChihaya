@@ -9,14 +9,14 @@ try {
 	config = {};
 }
 
-function poemFinder(args) {
+function poemFinder (args) {
 	const found = hi.find(({id}) => id == args);
 	if (!found) return;
 	return found;
 }
 
 module.exports = new Command('npoem', (message, args) => {
-	if (args.length < 1) {
+	if (args.length < 1 || args.length > 50) {
 		message.channel.createMessage({
 			embed: {
 				title: 'Please enter a poem number.',
@@ -26,15 +26,8 @@ module.exports = new Command('npoem', (message, args) => {
 		return;
 	}
 	const found = poemFinder(args[0]);
-	if (!found) {
-		message.channel.createMessage({
-			embed: {
-				title: 'Invalid poem number.',
-				color: config.colour || process.env.COLOUR,
-			},
-		});
-	} else {
-		let embed = {
+	if (found) {
+		const embed = {
 			embed: {
 				color: config.colour || process.env.COLOUR,
 				thumbnail: {
@@ -74,5 +67,12 @@ module.exports = new Command('npoem', (message, args) => {
 			},
 		};
 		message.channel.createMessage(embed);
+	} else {
+		message.channel.createMessage({
+			embed: {
+				title: 'Invalid poem number.',
+				color: config.colour || process.env.COLOUR,
+			},
+		});
 	}
 });

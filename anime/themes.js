@@ -12,10 +12,7 @@ const options = {
 	keys: [
 		'opName',
 		'anime',
-		'anime.romaji',
-		'anime.native',
-		'anime.userPreferred',
-		'anime.english',
+		'synonyms',
 		'opNum',
 	],
 };
@@ -37,25 +34,43 @@ function stringifyThemes (themeArr) {
 }
 
 module.exports = new Command('themes', (message, args) => {
-	const search = args.join(' ');
-	const fuse = new Fuse(themes, options);
-	let result = fuse.search(search);
-	if (result.length) {
-		if (result.length > 15) result = result.slice(0, 15);
-		const embed = {
-			embed: {
-				title: 'Your Search Results',
-				color: config.colour || process.env.COLOUR,
-				description: stringifyThemes(result),
-			},
-		};
-		message.channel.createMessage(embed);
-	} else {
+	if (args.length < 1 || args.length > 50) {
 		message.channel.createMessage({
 			embed: {
-				title: 'No results found for your search query.',
+				title: 'Invalid arguments',
 				color: config.colour || process.env.COLOUR,
 			},
 		});
+	} else {
+		const search = args.join(' ');
+		try {
+			const fuse = new Fuse(themes, options);
+			let result = fuse.search(search);
+			if (result.length) {
+				if (result.length > 15) result = result.slice(0, 15);
+				const embed = {
+					embed: {
+						title: 'Your Search Results',
+						color: config.colour || process.env.COLOUR,
+						description: stringifyThemes(result),
+					},
+				};
+				message.channel.createMessage(embed);
+			} else {
+				message.channel.createMessage({
+					embed: {
+						title: 'No results found for your search query.',
+						color: config.colour || process.env.COLOUR,
+					},
+				});
+			}
+		} catch (error) {
+			message.channel.createMessage({
+				embed: {
+					title: 'Invalid query',
+					color: config.colour || process.env.COLOUR,
+				},
+			});
+		}
 	}
 });
