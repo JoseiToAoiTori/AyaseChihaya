@@ -10,8 +10,13 @@ const options = {
 	maxPatternLength: 64,
 	minMatchCharLength: 3,
 	keys: [
-		'anime',
 		'opName',
+		'anime',
+		'anime.romaji',
+		'anime.native',
+		'anime.userPreferred',
+		'anime.english',
+		'opNum',
 	],
 };
 
@@ -102,7 +107,7 @@ module.exports = new Command('theme', (message, args) => {
 		let result = fuse.search(search);
 		if (result.length) {
 			result = result[0].item;
-			message.channel.createMessage(`${result.anime} ${result.opNum} ${result.opName}
+			message.channel.createMessage(`${result.anime.romaji} ${result.opNum} ${result.opName}
 ${result.link}`);
 		} else {
 			message.channel.createMessage({

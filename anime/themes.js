@@ -10,8 +10,12 @@ const options = {
 	maxPatternLength: 64,
 	minMatchCharLength: 3,
 	keys: [
-		'anime',
 		'opName',
+		'anime',
+		'anime.romaji',
+		'anime.native',
+		'anime.userPreferred',
+		'anime.english',
 		'opNum',
 	],
 };
@@ -27,7 +31,7 @@ try {
 function stringifyThemes (themeArr) {
 	let string = '';
 	for (let i = 0; i < themeArr.length; i++) {
-		string += `${i + 1}. [${themeArr[i].item.anime} ${themeArr[i].item.opNum} - ${themeArr[i].item.opName}](${themeArr[i].item.link})\n`;
+		string += `${i + 1}. [${themeArr[i].item.anime.romaji} ${themeArr[i].item.opNum} - ${themeArr[i].item.opName}](${themeArr[i].item.link})\n`;
 	}
 	return string;
 }
