@@ -11,7 +11,10 @@ const options = {
 	minMatchCharLength: 3,
 	keys: [
 		'opName',
-		'anime',
+		'anime.romaji',
+		'anime.english',
+		'anime.native',
+		'anime.userPreferred',
 		'synonyms',
 		'opNum',
 	],
