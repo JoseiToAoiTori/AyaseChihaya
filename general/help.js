@@ -79,7 +79,7 @@ module.exports = new Command('help', message => {
 			},
 			{
 				name: ';ask a question',
-				value: 'Command exclusive to Heather and Ralon. Asks a question during family feud games and first to react gets to go first.',
+				value: 'Command exclusive to bot owner and server admins. Asks a question during family feud games and first to react gets to go first.',
 			}];
 	}
 	message.channel.createMessage(embed);
