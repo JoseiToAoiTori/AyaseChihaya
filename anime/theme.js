@@ -77,16 +77,31 @@ module.exports = new Command('theme', (message, args) => {
 			}
 			args.splice(args.length - 1, 1);
 			search = args.join(' ');
-		} else if (/^(?:op|ed)[0-9]*$/.test(args[args.length - 1].toLowerCase())) {
+		} else if (/^(?:op|ed)[0-9]+$/.test(args[args.length - 1].toLowerCase())) {
 			const opType = args[args.length - 1].substring(0, 2).toUpperCase();
 			let opNum = '';
 			if (args[args.length - 1].length > 2) {
 				opNum = args[args.length - 1].match(/[0-9]+/);
 				// eslint-disable-next-line eqeqeq
-				if (opNum == '1') opNum = '';
+				if (opNum[0] == '1') opNum = '';
+				else opNum = opNum[0];
 			}
 			const opFilter = `${opType}${opNum}`;
-			filteredThemes = themes.filter(theme => theme.opNum.includes(opFilter) || theme.opNum === opFilter);
+			filteredThemes = themes.filter(theme => theme.opNum === opFilter);
+			if (filteredThemes.length === 0) {
+				message.channel.createMessage({
+					embed: {
+						title: 'Invalid OP/ED type.',
+						color: config.colour || process.env.COLOUR,
+					},
+				});
+				return;
+			}
+			args.splice(args.length - 1, 1);
+			search = args.join(' ');
+		} else if (/^(?:op|ed)$/.test(args[args.length - 1].toLowerCase())) {
+			const opType = args[args.length - 1].substring(0, 2).toUpperCase();
+			filteredThemes = themes.filter(theme => theme.opNum.includes(opType));
 			if (filteredThemes.length === 0) {
 				message.channel.createMessage({
 					embed: {
