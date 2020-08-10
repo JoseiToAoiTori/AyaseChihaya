@@ -18,6 +18,7 @@ try {
 const yuuko = new Client({
 	token: config.token || process.env.TOKEN, // Token used to auth your bot account
 	prefix: config.prefix || process.env.PREFIX, // Prefix used to trigger commands
+	ignoreBots: true,
 });
 
 yuuko
