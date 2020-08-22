@@ -35,6 +35,7 @@ module.exports = new Command('activity', async (incomingMessage, args, {yuuko}) 
 			};
 			index++;
 			const userMessages = messages.filter(message => message.author.username === user && message.content.split(' ').length > 2).sort((a, b) => a.timestamp - b.timestamp);
+			if (userMessages.length === 0) continue;
 			let startTime = userMessages[0].timestamp; // Start time for plotting
 			while (startTime <= userMessages[userMessages.length - 1].timestamp) {
 				const wordCount = userMessages.filter(message => message.timestamp > startTime && message.timestamp < startTime + 86400000).reduce((accumulator, message) => accumulator + message.content.split(' ').length, 0);
