@@ -1,6 +1,6 @@
 const {Command} = require('yuuko');
 const superagent = require('superagent');
-const distinctColors = require('distinct-colors').default
+const distinctColors = require('distinct-colors').default;
 
 let config;
 
@@ -23,7 +23,11 @@ module.exports = new Command('activity', async (incomingMessage, args, {yuuko}) 
 		const messages = await channel.getMessages(20000);
 		console.log('Messages acquired');
 		const users = new Set(messages.map(message => message.author.username));
-		const colours = distinctColors({count: users.size});
+		const colours = distinctColors({
+			count: users.size,
+			samples: 3200,
+			quality: 200,
+		});
 		const dataset = [];
 		let index = 0;
 		for (const user of users) {
