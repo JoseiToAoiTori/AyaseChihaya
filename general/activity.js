@@ -20,7 +20,7 @@ module.exports = new Command('activity', async (incomingMessage, args, {yuuko}) 
 				color: config.colour || process.env.COLOUR,
 			},
 		});
-		const messages = await channel.getMessages(Number.MAX_SAFE_INTEGER);
+		const messages = await channel.getMessages(20000);
 		console.log('Messages acquired');
 		const users = new Set(messages.map(message => message.author.username));
 		const colours = distinctColors({count: users.size});
