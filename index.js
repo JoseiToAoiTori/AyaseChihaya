@@ -70,7 +70,7 @@ yuuko.once('ready', async () => {
 });
 
 yuuko.editStatus('online', {
-	name: 'karuta',
+	name: ';help for list of commands',
 	type: 0,
 	url: 'https://github.com/JoseiToAoiTori/AyaseChihaya',
 });
