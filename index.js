@@ -91,4 +91,7 @@ yuuko.on('messageCreate', message => {
 	if (message.content.toLowerCase().includes('antifa') && chance.bool({likelihood: 25})) {
 		message.channel.createMessage('T E R R O R I S T  O R G A N I Z A T I O N');
 	}
+	if (message.content.toLowerCase().includes('elaina') && chance.bool({likelihood: 25})) {
+		message.channel.createMessage('Who is this beautiful girl whose ashen hair flutters in the wind, shining so much with beauty and talent that even the sun\'s eyes squint involuntarily? That\'s right, it\'s mein führer, Adolf Hitler!');
+	}
 });
