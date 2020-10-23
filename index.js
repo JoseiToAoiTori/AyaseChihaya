@@ -92,6 +92,6 @@ yuuko.on('messageCreate', message => {
 		message.channel.createMessage('T E R R O R I S T  O R G A N I Z A T I O N');
 	}
 	if (message.content.toLowerCase().includes('elaina') || message.content.toLowerCase().includes('tabitabi') || message.content.toLowerCase().includes('wandering witch') && chance.bool({likelihood: 30})) {
-		message.channel.createMessage('OH MY GOD, will you all SHUT THE FUCK UP about wandering führer, Elaina Hitler whose ashen hair flutters in the wind, shining so much with beauty and talent that even the sun\'s eyes squint involuntarily? I\'m one Hitler joke away from starting a zombie plant apocalypse here.');
+		message.channel.createMessage('OH MY GOD, will you all SHUT THE FUCK UP about wandering führer, Adolf Hitler whose ashen hair flutters in the wind, shining so much with beauty and talent that even the sun\'s eyes squint involuntarily? I\'m one Hitler joke away from starting a zombie plant apocalypse here.');
 	}
 });
