@@ -384,7 +384,7 @@ eris-reactions@^0.1.2:
   resolved "https://registry.yarnpkg.com/eris-reactions/-/eris-reactions-0.1.3.tgz#cd0b95d0a947ae173f11f085d744882d2be4a436"
   integrity sha512-lcqxCconH4Ca5GdUR1qUWQDHHv64JowIpRZZewRTrPHvXbGZyoE1BJZ8LETux+NSye4WIrEiysnzxfPBLZT6wg==
 
-eris@^0.13.1:
+eris@^0.13.3:
   version "0.13.3"
   resolved "https://registry.yarnpkg.com/eris/-/eris-0.13.3.tgz#22abb71f9ce0d453200b537cad457dc39c7b302b"
   integrity sha512-WBtLyknOWZpYZL9yPhez0oKUWvYpunSg43hGxawwjwSf3gFXmbEPYrT8KlmZXtpJnX16eQ7mzIq+MgSh3LarEg==
@@ -1499,7 +1499,7 @@ xmlchars@^2.2.0:
   resolved "https://registry.yarnpkg.com/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
   integrity sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==
 
-yuuko@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/yuuko/-/yuuko-2.0.0.tgz#c4267b89491f536b2af2a75ab4bdaa02ca54ae45"
-  integrity sha512-K9ZCwZkoLABHFEkGA7WKYnulMCdeEgk0rJYUcs/V5QtMfuKWYGWAizewlbnPfk6QkZCOBZ86Vu4L/NAm708QHQ==
+yuuko@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/yuuko/-/yuuko-2.0.2.tgz#590a042377696e324fb06e42bc0a06bfb397b700"
+  integrity sha512-3x2RWx07ZVFUi8Zj9XBovXAk6I75jEr+h4DprPrGUJimEvxOjYEEopk1fX8joAJ3Y4cSS6ivURtc/aanz6XJGg==
