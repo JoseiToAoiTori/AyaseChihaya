@@ -48,8 +48,9 @@ yuuko.once('ready', async () => {
 		);
 		console.log('Listening for reactions');
 		reactionListener.on('reacted', async event => {
+			const msgAgain = await yuuko.getMessage(rrConfig.channelID, rrConfig.messageID);
 			const reactRole = rrConfig.reactRoles.find(rr => rr.emote === `${event.emoji.name}:${event.emoji.id}` || rr.emote === event.emoji.name);
-			const memberRoles = await msg.channel.guild.members.get(event.userID).roles;
+			const memberRoles = msgAgain.channel.guild.members.get(event.userID).roles;
 			const found = memberRoles.find(role => role === reactRole.roleID);
 			if (found) {
 				await yuuko.removeGuildMemberRole(rrConfig.guildID, event.userID, reactRole.roleID, 'react role through Chihaya');
