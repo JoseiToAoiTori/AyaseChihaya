@@ -384,10 +384,10 @@ eris-reactions@^0.1.2:
   resolved "https://registry.yarnpkg.com/eris-reactions/-/eris-reactions-0.1.3.tgz#cd0b95d0a947ae173f11f085d744882d2be4a436"
   integrity sha512-lcqxCconH4Ca5GdUR1qUWQDHHv64JowIpRZZewRTrPHvXbGZyoE1BJZ8LETux+NSye4WIrEiysnzxfPBLZT6wg==
 
-eris@^0.13.3:
-  version "0.13.3"
-  resolved "https://registry.yarnpkg.com/eris/-/eris-0.13.3.tgz#22abb71f9ce0d453200b537cad457dc39c7b302b"
-  integrity sha512-WBtLyknOWZpYZL9yPhez0oKUWvYpunSg43hGxawwjwSf3gFXmbEPYrT8KlmZXtpJnX16eQ7mzIq+MgSh3LarEg==
+eris@^0.13.4:
+  version "0.13.4"
+  resolved "https://registry.yarnpkg.com/eris/-/eris-0.13.4.tgz#06159ff619446046e392e28a70667d73c27aa631"
+  integrity sha512-IFA14nasCig8xp8cVCULvzBuJ0qpYqJ3XyEtm9OLdC177DYDCJ9QM2Aq+KOpejIVl7838n9AyRlLI6w9Eu3PiQ==
   dependencies:
     ws "^7.2.1"
   optionalDependencies:
