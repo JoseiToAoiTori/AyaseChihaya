@@ -157,6 +157,11 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+big-integer@^1.6.44:
+  version "1.6.48"
+  resolved "https://registry.yarnpkg.com/big-integer/-/big-integer-1.6.48.tgz#8fd88bd1632cba4a1c8c3e3d7159f08bb95b4b9e"
+  integrity sha512-j51egjPa7/i+RdiRuJbPdJ2FIUYYPhvYLjzoYbcMMm62ooO6F94fETG4MTs46zPAF9Brs04OajboA/qTGuz78w==
+
 bluebird@^3.5.0, bluebird@^3.5.5:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
@@ -877,6 +882,13 @@ lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19:
   version "4.17.19"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
   integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
+
+meeks-prf-js@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/meeks-prf-js/-/meeks-prf-js-1.0.0.tgz#83543e45c2c49188484ddc5de3f8c7c3a0152d34"
+  integrity sha512-XxwmBgHjgwjkK9a9C1pDlSIV6PVzC0e98e15jf7WIh+KrGUXJL0/jDseeACWaOF5lH+JI3ShcfgMjRaGzT+7ug==
+  dependencies:
+    big-integer "^1.6.44"
 
 methods@^1.1.2:
   version "1.1.2"
