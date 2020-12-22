@@ -1,7 +1,7 @@
 {
   "name": "ayase-chihaya",
   "version": "1.0.0",
-  "description": "A Discord Bot for personal use",
+  "description": "A Discord Bot for personal use.",
   "main": "index.js",
   "repository": "https://github.com/JoseiToAoiTori/AyaseChihaya.git",
   "author": "JoseiToAoiTori",
@@ -18,8 +18,8 @@
     "fuse.js": "^6.0.4",
     "meeks-prf-js": "^1.0.0",
     "snoowrap": "^1.21.0",
-    "superagent": "^5.2.2",
-    "turndown": "^6.0.0",
+    "superagent": "^6.1.0",
+    "turndown": "^7.0.0",
     "yuuko": "^2.0.2"
   }
 }
