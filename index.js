@@ -63,6 +63,7 @@ yuuko.once('ready', async () => {
 			}
 		});
 	}
+	/*
 	if (rrConfig2.channelID && rrConfig2.messageID && rrConfig2.guildID) {
 		const msg = await yuuko.getMessage(rrConfig2.channelID, rrConfig2.messageID);
 		for (const react of rrConfig2.reactRoles) {
@@ -94,6 +95,7 @@ yuuko.once('ready', async () => {
 			}
 		});
 	}
+	*/
 });
 
 yuuko.editStatus('online', {
