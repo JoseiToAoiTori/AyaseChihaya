@@ -19,14 +19,19 @@ module.exports = new Command('character', async (message, args) => {
 		});
 		return;
 	}
-	const response = await superagent.get(`https://xiv-api-chihaya.herokuapp.com/characters/name/${args[2]}/${args[0]}%20${args[1]}.png`);
-	if (response.ok) {
+	let response;
+	try {
+		response = await superagent.get(`https://xiv-api-chihaya.herokuapp.com/characters/name/${args[2]}/${args[0]}%20${args[1]}.png`);
+	} catch (error) {
+		response = null;
+	}
+	if (response && response.ok && Buffer.isBuffer(response.body)) {
 		console.log(response.body);
 		message.channel.createMessage('Praise Yoshi-P', {file: response.body, name: `${args[0]}_${args[1]}.png`});
 	} else {
 		message.channel.createMessage({
 			embed: {
-				title: 'Help Yoshi-P is banging on my door, yelling at me to buy the new mogstation mount!',
+				title: 'Help Yoshi-P is banging on my door, yelling at me to buy the new mogstation mount!!!!!',
 				color: config.colour || process.env.COLOUR,
 			},
 		});
