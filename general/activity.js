@@ -12,7 +12,7 @@ try {
 
 module.exports = new Command('activity', async (incomingMessage, args, {yuuko}) => {
 	const owner = config.owner || process.env.OWNER;
-	if (args.length > 0 && (incomingMessage.author.id === owner || (member.roles.cache.some(role => role.name === 'Host') && member.permissions.has(Permissions.FLAGS.MANAGE_CHANNELS)))) {
+	if (args.length > 0 && incomingMessage.author.id === owner || (incomingMessage.member.roles.some(role => role === '874337528990302268') && incomingMessage.guildID === '874337058192228403')) {
 		const channel = await yuuko.getChannel(args[0]);
 		const msg = await incomingMessage.channel.createMessage({
 			embed: {
