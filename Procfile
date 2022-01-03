@@ -1,1 +1,1 @@
-worker: node animethemes/index && node .
+worker: node .
