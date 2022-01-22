@@ -13,14 +13,14 @@ try {
 }
 
 const singleQuery = `query ($page: Int) {
-	Page(page: $page, perPage: 100) {
+	Page(page: $page, perPage: 50) {
 	  pageInfo {
 		perPage
 		currentPage
 		lastPage
 		hasNextPage
 	  }
-	  media(type: ANIME, countryOfOrigin: JP, status_in: RELEASING, sort: [POPULARITY_DESC], isAdult: false, format_in: [TV, TV_SHORT, MOVIE]) {
+	  media(type: ANIME, countryOfOrigin: JP, status: RELEASING, sort: [POPULARITY_DESC], isAdult: false, format_in: [TV, TV_SHORT, MOVIE]) {
 		title {
 		  romaji
 		}
@@ -30,7 +30,8 @@ const singleQuery = `query ($page: Int) {
 		}
 	  }
 	}
-  }`;
+  }
+  `;
 const bigQuery = `query ($search: String, $status: [MediaStatus]) {
 	Media(type: ANIME, search: $search, sort: SEARCH_MATCH, status_in: $status) {
 	  id
@@ -64,8 +65,11 @@ module.exports = new Command('next', async (message, args) => {
 			return;
 		}
 		const lastPage = data.body.data.Page.pageInfo.lastPage;
+		console.log(singleQuery);
+		console.log(JSON.stringify(data.body));
 		data = data.body.data.Page.media;
 		page++;
+		console.log(page);
 		while (page <= lastPage) {
 			promiseArr.push(superagent
 				.post('https://graphql.anilist.co')
@@ -73,6 +77,7 @@ module.exports = new Command('next', async (message, args) => {
 				.set('accept', 'json'));
 			page++;
 		}
+		console.log(promiseArr.length);
 		Promise.all(promiseArr).then(returnedData => {
 			for (const anime of returnedData) {
 				data = [...data, ...anime.body.data.Page.media];
@@ -92,8 +97,8 @@ module.exports = new Command('next', async (message, args) => {
 			data.sort((a, b) => a.nextAiringEpisode.timeUntilAiring - b.nextAiringEpisode.timeUntilAiring);
 			for (const anime of data) {
 				let nextEp = new Date(anime.nextAiringEpisode.timeUntilAiring * 1000);
-				const minutes = Math.floor((nextEp/1000/60) % 60);
-				const hours = Math.floor((nextEp/(1000*60*60)) % 24);
+				const minutes = Math.floor(nextEp / 1000 / 60 % 60);
+				const hours = Math.floor(nextEp / (1000 * 60 * 60) % 24);
 				if (hours === 0 && minutes === 0) nextEp = 'Literal seconds away';
 				else if (hours === 0) nextEp = `${minutes} minutes`;
 				else nextEp = `${hours} hours ${minutes} minutes`;
@@ -120,9 +125,9 @@ module.exports = new Command('next', async (message, args) => {
 		let nextEp;
 		if (data.nextAiringEpisode) {
 			nextEp = new Date(data.nextAiringEpisode.timeUntilAiring * 1000);
-			const minutes = Math.floor((nextEp/1000/60) % 60);
-			const hours = Math.floor((nextEp/(1000*60*60)) % 24);
-			const days = Math.floor(nextEp/(1000*60*60*24));
+			const minutes = Math.floor(nextEp / 1000 / 60 % 60);
+			const hours = Math.floor(nextEp / (1000 * 60 * 60) % 24);
+			const days = Math.floor(nextEp / (1000 * 60 * 60 * 24));
 			if (days === 0 && hours === 0 && minutes === 0) nextEp = 'Literal seconds away';
 			else if (days === 0 && hours === 0) nextEp = `${minutes} minutes`;
 			else if (days === 0) nextEp = `${hours} hours ${minutes} minutes`;
@@ -140,7 +145,7 @@ module.exports = new Command('next', async (message, args) => {
 				url: data.siteUrl,
 				fields: [
 					{
-						name: `Next episode ${data.nextAiringEpisode ? (data.nextAiringEpisode.episode || '-') : '?'} in`,
+						name: `Next episode ${data.nextAiringEpisode ? data.nextAiringEpisode.episode || '-' : '?'} in`,
 						value: nextEp,
 					},
 				],
