@@ -13,14 +13,14 @@ try {
 }
 
 const singleQuery = `query ($page: Int) {
-	Page(page: $page, perPage: 50) {
+	Page(page: $page, perPage: 100) {
 	  pageInfo {
 		perPage
 		currentPage
 		lastPage
 		hasNextPage
 	  }
-	  media(type: ANIME, countryOfOrigin: JP, status_in: [RELEASING, NOT_YET_RELEASED], sort: [POPULARITY_DESC]) {
+	  media(type: ANIME, countryOfOrigin: JP, status_in: RELEASING, sort: [POPULARITY_DESC], isAdult: false, format_in: [TV, TV_SHORT, MOVIE]) {
 		title {
 		  romaji
 		}
