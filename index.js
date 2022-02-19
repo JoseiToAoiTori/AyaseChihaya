@@ -37,6 +37,7 @@ yuuko.once('ready', async () => {
 		for (const react of rrConfig.reactRoles) {
 			if (!msg.reactions[react.emote]) {
 				// eslint-disable-next-line no-await-in-loop
+				console.log(react.emote);
 				await msg.addReaction(react.emote);
 				console.log('emote created');
 			}
