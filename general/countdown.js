@@ -15,5 +15,5 @@ module.exports = new Command('countdown', (message, args) => {
             message.channel.createMessage(`${timeRemaining}`);
             timeRemaining = timeRemaining - 1;
         }
-    }, 1500)
+    }, 2000)
 });
