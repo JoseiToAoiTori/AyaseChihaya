@@ -8,12 +8,11 @@ try {
 	config = {};
 }
 
-module.exports = new Command('countdown', (message, args) => {
+module.exports = new Command('countdown', async (message, args) => {
     var timeRemaining = 5;
-    setInterval(async () => {
-        while (timeRemaining >= 1) {
-            message.channel.createMessage(`${timeRemaining}`);
-            timeRemaining = timeRemaining - 1;
-        }
-    }, 2000)
+    while (timeRemaining >= 1) {
+        await message.channel.createMessage(`${timeRemaining}`);
+        timeRemaining = timeRemaining - 1;
+        await new Promise(r => setTimeout(r, 800));
+    }
 });
