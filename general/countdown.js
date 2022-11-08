@@ -13,6 +13,6 @@ module.exports = new Command('countdown', async (message, args) => {
     while (timeRemaining >= 1) {
         await message.channel.createMessage(`${timeRemaining}`);
         timeRemaining = timeRemaining - 1;
-        await new Promise(r => setTimeout(r, 800));
+        await new Promise(r => setTimeout(r, 1500));
     }
 });
