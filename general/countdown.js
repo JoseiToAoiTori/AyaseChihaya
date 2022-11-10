@@ -8,7 +8,7 @@ try {
 	config = {};
 }
 
-module.exports = new Command('countdown', async (message, args) => {
+module.exports = new Command(['countdown', 'cd'], async (message, args) => {
     var timeRemaining = 5;
     while (timeRemaining >= 1) {
         await message.channel.createMessage(`${timeRemaining}`);
