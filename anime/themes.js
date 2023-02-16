@@ -12,7 +12,7 @@ try {
 function stringifyThemes (videos) {
 	let string = '';
 	for (let i = 0; i < videos.length; i++) {
-		string += `${i + 1}. [${videos[i].animethemeentries[0].animetheme.anime.name} ${videos[i].animethemeentries[0].animetheme.slug}](${videos[i].link})\n`;
+		string += `${i + 1}. [${videos[i].animethemeentries[0].animetheme.anime.name} ${videos[i].animethemeentries[0].animetheme.slug}${videos[i].animethemeentries[0].version > 1 ? `v${videos[i].animethemeentries[0].version}` : ''}](${videos[i].link})\n`;
 	}
 	return string;
 }
