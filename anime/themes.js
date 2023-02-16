@@ -12,7 +12,7 @@ try {
 function stringifyThemes (videos) {
 	let string = '';
 	for (let i = 0; i < videos.length; i++) {
-		string += `${i + 1}. [${videos[i].filename}](${videos[i].link})\n`;
+		string += `${i + 1}. [${videos[i].animethemeentries[0].animetheme.anime.name} ${videos[i].animethemeentries[0].animetheme.slug}](${videos[i].link})\n`;
 	}
 	return string;
 }
@@ -27,7 +27,7 @@ module.exports = new Command('themes', async (message, args) => {
 		});
 	} else {
 		const qString = encodeURIComponent(args.join(' '));
-		const response = await superagent.get(`https://api.animethemes.moe/search?q=${qString}&fields[search]=videos`);
+		const response = await superagent.get(`https://api.animethemes.moe/search?q=${qString}&fields[search]=videos&include[video]=animethemeentries.animetheme.anime&page[limit]=15`);
 		let videos = response.body.search.videos;
 		if (videos.length) {
 			if (videos.length > 15) videos = videos.slice(0, 15);
