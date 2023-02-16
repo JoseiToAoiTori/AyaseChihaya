@@ -74,10 +74,6 @@ module.exports = new Command('help', message => {
 	if (message.guildID === '514203145333899276') {
 		embed.embed.fields = [...embed.embed.fields,
 			{
-				name: ';gw',
-				value: 'Returns a schedule for groupwatches. Ask Deafness#3061 to update the schedule in case of changes. Ask Heather ★#6868 for code changes or other issues.',
-			},
-			{
 				name: ';ask a question',
 				value: 'Command exclusive to bot owner and server admins. Asks a question during family feud games and first to react gets to go first.',
 			}];

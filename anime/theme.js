@@ -19,10 +19,10 @@ module.exports = new Command('theme', async (message, args) => {
 		});
 	} else {
 		const qString = encodeURIComponent(args.join(' '));
-		const response = await superagent.get(`https://api.animethemes.moe/search?q=${qString}&fields[search]=videos`);
-		const videos = response.body.search.videos;
+		const response = await superagent.get(`https://api.animethemes.moe/animetheme?q=${qString}&include=animethemeentries.videos&page[size]=1`);
+		const videos = response.body.animethemes;
 		if (videos.length) {
-			message.channel.createMessage(`${videos[0].link}`);
+			message.channel.createMessage(`${videos[0].animethemeentries[0].videos[0].link}`);
 		} else {
 			message.channel.createMessage({
 				embed: {

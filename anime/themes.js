@@ -12,7 +12,7 @@ try {
 function stringifyThemes (videos) {
 	let string = '';
 	for (let i = 0; i < videos.length; i++) {
-		string += `${i + 1}. [${videos[i].animethemeentries[0].animetheme.anime.name} ${videos[i].animethemeentries[0].animetheme.slug}${videos[i].animethemeentries[0].version > 1 ? `v${videos[i].animethemeentries[0].version}` : ''}](${videos[i].link})\n`;
+		string += `${i + 1}. [${videos[i].anime.name} ${videos[i].slug} - ${videos[i].song.title}](${videos[i].animethemeentries[0].videos[0].link})\n`;
 	}
 	return string;
 }
@@ -27,8 +27,8 @@ module.exports = new Command('themes', async (message, args) => {
 		});
 	} else {
 		const qString = encodeURIComponent(args.join(' '));
-		const response = await superagent.get(`https://api.animethemes.moe/search?q=${qString}&fields[search]=videos&include[video]=animethemeentries.animetheme.anime&page[limit]=15`);
-		let videos = response.body.search.videos;
+		const response = await superagent.get(`https://api.animethemes.moe/animetheme?q=${qString}&include=anime,song,animethemeentries.videos&page[size]=15`);
+		let videos = response.body.animethemes;
 		if (videos.length) {
 			if (videos.length > 15) videos = videos.slice(0, 15);
 			const embed = {
