@@ -106,7 +106,7 @@ yuuko.editStatus('online', {
 });
 
 yuuko.on('messageCreate', message => {
-	if (message.content.toLowerCase().includes('top 10 reasons') && (message.guildID === '514203145333899276' || message.guildID === '386933744025468939') && !message.author.bot) {
+	if ((message.content.toLowerCase().includes('top 10 reasons') || message.content.toLowerCase().includes('top ten reasons')) && (message.guildID === '514203145333899276' || message.guildID === '386933744025468939') && !message.author.bot) {
 		message.channel.createMessage(`1. You can help people out
 2. You can have a lot of fun with everyone
 3. You'll end up with a great smile

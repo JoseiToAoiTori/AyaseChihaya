@@ -1,8 +1,6 @@
+/* eslint-disable no-await-in-loop */
 const {Command} = require('yuuko');
 const superagent = require('superagent');
-const TurndownService = require('turndown');
-
-const turndownService = new TurndownService();
 
 let config;
 
@@ -53,8 +51,8 @@ const bigQuery = `query ($search: String, $status: [MediaStatus]) {
 module.exports = new Command('next', async (message, args) => {
 	if (args.length < 1) {
 		let page = 1;
-		const promiseArr = [];
 		let data;
+		let hasNextPage = true;
 		try {
 			data = await superagent
 				.post('https://graphql.anilist.co')
@@ -64,51 +62,43 @@ module.exports = new Command('next', async (message, args) => {
 			message.channel.createMessage(`${error}`);
 			return;
 		}
-		const lastPage = data.body.data.Page.pageInfo.lastPage;
-		console.log(singleQuery);
-		console.log(JSON.stringify(data.body));
 		data = data.body.data.Page.media;
 		page++;
-		console.log(page);
-		while (page <= lastPage) {
-			promiseArr.push(superagent
+		while (hasNextPage) {
+			const response = await superagent
 				.post('https://graphql.anilist.co')
 				.send({query: singleQuery, variables: {page}})
-				.set('accept', 'json'));
+				.set('accept', 'json');
+			data = [...data, ...response.body.data.Page.media];
+			hasNextPage = response.body.data.Page.pageInfo.hasNextPage;
 			page++;
 		}
-		console.log(promiseArr.length);
-		Promise.all(promiseArr).then(returnedData => {
-			for (const anime of returnedData) {
-				data = [...data, ...anime.body.data.Page.media];
-			}
-			const embed = {
-				embed: {
-					title: 'Schedule for Today (Japan Airing)',
-					url: 'http://anichart.net',
-					color: config.colour || process.env.COLOUR,
-					fields: [],
-				},
-			};
-			for (const anime of data) {
-				if (anime.nextAiringEpisode) console.log(anime);
-			}
-			data = data.filter(anime => anime.nextAiringEpisode && anime.nextAiringEpisode.timeUntilAiring && anime.nextAiringEpisode.timeUntilAiring < 86400);
-			data.sort((a, b) => a.nextAiringEpisode.timeUntilAiring - b.nextAiringEpisode.timeUntilAiring);
-			for (const anime of data) {
-				let nextEp = new Date(anime.nextAiringEpisode.timeUntilAiring * 1000);
-				const minutes = Math.floor(nextEp / 1000 / 60 % 60);
-				const hours = Math.floor(nextEp / (1000 * 60 * 60) % 24);
-				if (hours === 0 && minutes === 0) nextEp = 'Literal seconds away';
-				else if (hours === 0) nextEp = `${minutes} minutes`;
-				else nextEp = `${hours} hours ${minutes} minutes`;
-				embed.embed.fields.push({
-					name: `${anime.title.romaji} ${anime.nextAiringEpisode.episode}`,
-					value: nextEp,
-				});
-			}
-			message.channel.createMessage(embed);
-		});
+		const embed = {
+			embed: {
+				title: 'Schedule for Today (Japan Airing)',
+				url: 'http://anichart.net',
+				color: config.colour || process.env.COLOUR,
+				fields: [],
+			},
+		};
+		for (const anime of data) {
+			if (anime.nextAiringEpisode) console.log(anime);
+		}
+		data = data.filter(anime => anime.nextAiringEpisode && anime.nextAiringEpisode.timeUntilAiring && anime.nextAiringEpisode.timeUntilAiring < 86400);
+		data.sort((a, b) => a.nextAiringEpisode.timeUntilAiring - b.nextAiringEpisode.timeUntilAiring);
+		for (const anime of data) {
+			let nextEp = new Date(anime.nextAiringEpisode.timeUntilAiring * 1000);
+			const minutes = Math.floor(nextEp / 1000 / 60 % 60);
+			const hours = Math.floor(nextEp / (1000 * 60 * 60) % 24);
+			if (hours === 0 && minutes === 0) nextEp = 'Literal seconds away';
+			else if (hours === 0) nextEp = `${minutes} minutes`;
+			else nextEp = `${hours} hours ${minutes} minutes`;
+			embed.embed.fields.push({
+				name: `${anime.title.romaji} ${anime.nextAiringEpisode.episode}`,
+				value: nextEp,
+			});
+		}
+		message.channel.createMessage(embed);
 	} else {
 		const search = args.join(' ');
 		let data;

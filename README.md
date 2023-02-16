@@ -13,9 +13,8 @@ A Discord Bot for personal use. Any functionality is entirely arbitrary and depe
 Requires NodeJS and yarn. npm will also work. You also need like, a Discord Bot account and stuff.
 
 ```bash
-# Edit your configs
+# Edit your config
 $ cp sample.config.js config.js && $EDITOR config.js
-$ cp animethemes/sample.config.js animethemes/config.js && $EDITOR animethemes/config.js
 # Install dependencies
 $ yarn
 # Start the bot
@@ -31,11 +30,6 @@ I made this bot environment variable friendly so I could deploy it on Heroku. He
 - `PREFIX` - The bot prefix. Can be `.` or even `yeet` or whatever the fuck you want.
 - `COLOUR` - Embed colour represented by integer value.
 - `AVATAR` - Not the bot avatar actually. It's just the image that appears on a buncha embeds.
-- `USERAGENT` - The reddit user agent for your app.
-- `CLIENT_ID` - The reddit client ID for your app.
-- `CLIENT_SECRET` - The reddit client secret for your app.
-- `USERNAME` - Your reddit username.
-- `PASSWORD` - Your reddit password.
 
 ## Random Bullshit
 
