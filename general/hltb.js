@@ -22,6 +22,14 @@ module.exports = new Command('hltb', async (message, args) => {
 	}
 	const query = args.join(' ');
 	let response = await hltbService.search(query);
+	if (response.length === 0) {
+		return message.channel.createMessage({
+			embed: {
+				title: 'Not found.',
+				color: config.colour || process.env.COLOUR,
+			},
+		});
+	}
 	response = response[0];
 	const embed = {
 		embed: {
