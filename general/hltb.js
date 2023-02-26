@@ -28,11 +28,11 @@ module.exports = new Command('hltb', async (message, args) => {
 			color: config.colour || process.env.COLOUR,
 			author: {
 				name: response.name,
-				icon_url: `https://howlongtobeat.com${response.imageUrl}`,
+				icon_url: `${response.imageUrl}`,
 				url: `https://howlongtobeat.com/game?id=${response.id}`,
 			},
 			thumbnail: {
-				url: `https://howlongtobeat.com${response.imageUrl}`,
+				url: `${response.imageUrl}`,
 			},
 			fields: [
 				{
