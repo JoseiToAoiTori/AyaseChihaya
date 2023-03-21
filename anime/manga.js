@@ -86,7 +86,7 @@ module.exports = new Command('manga', async (message, args) => {
 			thumbnail: {
 				url: anime.coverImage.large,
 			},
-			description: `[AniList](${anime.siteUrl}) | [MyAnimeList](https://myanimelist.net/anime/${anime.idMal})`,
+			description: `[AniList](${anime.siteUrl}) | [MyAnimeList](https://myanimelist.net/manga/${anime.idMal})`,
 			fields: [
 				{
 					name: 'Average score',
