@@ -118,7 +118,7 @@ yuuko.once('ready', async () => {
 				stillTouchingGrass.push(grassToucher);
 			}
 		}
-		const newString = `${splitData[0]}=${stillTouchingGrass.join('|')}`;
+		const newString = `${splitData[0]}=${stillTouchingGrass.join('|')}|`;
 		await yuuko.editMessage(rrConfig.touchingGrassChannelID, rrConfig.touchingGrassMessageID, newString);
 	}, 60 * 1000); // 60 * 1000 milsec
 });
