@@ -120,7 +120,6 @@ yuuko.once('ready', async () => {
 		}
 		const newString = `${splitData[0]}=${stillTouchingGrass.join('|')}`;
 		await yuuko.editMessage(rrConfig.touchingGrassChannelID, rrConfig.touchingGrassMessageID, newString);
-		console.log('all this code has run');
 	}, 60 * 1000); // 60 * 1000 milsec
 });
 
