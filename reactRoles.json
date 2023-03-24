@@ -2,6 +2,9 @@
 	"guildID": "514203145333899276",
 	"channelID": "514369023568510979",
 	"messageID": "1010962335881494629",
+	"touchingGrassChannelID": "386933744025468941",
+	"touchingGrassMessageID": "1088756786644910111",
+	"touchingGrassRoleID": "1081781586929922169",
 	"reactRoles": [{
 		"emote": "🔞",
 		"roleID": "612298828019793935",

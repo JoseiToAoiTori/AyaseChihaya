@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 const {Client} = require('yuuko');
 const path = require('path');
 
@@ -6,7 +7,7 @@ const chance = new Chance();
 const ReactionHandler = require('eris-reactions');
 
 const rrConfig = require('./reactRoles.json');
-const rrConfig2 = require('./reactRoles2.json');
+// const rrConfig2 = require('./reactRoles2.json');
 
 let config;
 
@@ -64,39 +65,63 @@ yuuko.once('ready', async () => {
 			}
 		});
 	}
-	/*
-	if (rrConfig2.channelID && rrConfig2.messageID && rrConfig2.guildID) {
-		const msg = await yuuko.getMessage(rrConfig2.channelID, rrConfig2.messageID);
-		for (const react of rrConfig2.reactRoles) {
-			if (!msg.reactions[react.emote]) {
-				// eslint-disable-next-line no-await-in-loop
-				await msg.addReaction(react.emote);
-				console.log('emote created');
+	//
+	// if (rrConfig2.channelID && rrConfig2.messageID && rrConfig2.guildID) {
+	// const msg = await yuuko.getMessage(rrConfig2.channelID, rrConfig2.messageID);
+	// for (const react of rrConfig2.reactRoles) {
+	// if (!msg.reactions[react.emote]) {
+	// // eslint-disable-next-line no-await-in-loop
+	// await msg.addReaction(react.emote);
+	// console.log('emote created');
+	// }
+	// }
+	// // eslint-disable-next-line new-cap
+	// const reactionListener2 = new ReactionHandler.continuousReactionStream(
+	// msg,
+	// userID => userID !== msg.author.id,
+	// true,
+	// );
+	// console.log('Listening for reactions');
+	// reactionListener2.on('reacted', async event => {
+	// const reactRole = rrConfig2.reactRoles.find(rr => rr.emote === `${event.emoji.name}:${event.emoji.id}` || rr.emote === event.emoji.name);
+	// const memberRoles = event.msg.channel.guild.members.get(event.userID).roles;
+	// const found = memberRoles.find(role => role === reactRole.roleID);
+	// if (found) {
+	// await yuuko.removeGuildMemberRole(rrConfig2.guildID, event.userID, reactRole.roleID, 'react role through Chihaya');
+	// const dmChannel = await yuuko.getDMChannel(event.userID);
+	// dmChannel.createMessage(`You no longer have access to the <#${reactRole.channel}> channel.`);
+	// } else {
+	// await yuuko.addGuildMemberRole(rrConfig2.guildID, event.userID, reactRole.roleID, 'react role through Chihaya');
+	// const dmChannel = await yuuko.getDMChannel(event.userID);
+	// dmChannel.createMessage(`You now have access to the <#${reactRole.channel}> channel. To revoke access, simply react again.`);
+	// }
+	// });
+	// }
+	//
+
+
+	setInterval(async () => {
+		const message = await yuuko.getMessage(rrConfig.touchingGrassChannelID, rrConfig.touchingGrassMessageID);
+		const splitData = message.content.split('=');
+		if (splitData.length <= 1) {
+			return;
+		}
+		const allGrassTouchers = splitData[1].split('|');
+		const stillTouchingGrass = [];
+
+		for (const grassToucher of allGrassTouchers) {
+			if (grassToucher.length <= 0) continue;
+			if (parseInt(grassToucher.split(':')[1], 10) < new Date().getTime()) {
+				const id = grassToucher.split(':')[0];
+				await yuuko.removeGuildMemberRole(rrConfig.guildID, id, rrConfig.touchingGrassRoleID);
+			} else {
+				stillTouchingGrass.push(grassToucher);
 			}
 		}
-		// eslint-disable-next-line new-cap
-		const reactionListener2 = new ReactionHandler.continuousReactionStream(
-			msg,
-			userID => userID !== msg.author.id,
-			true,
-		);
-		console.log('Listening for reactions');
-		reactionListener2.on('reacted', async event => {
-			const reactRole = rrConfig2.reactRoles.find(rr => rr.emote === `${event.emoji.name}:${event.emoji.id}` || rr.emote === event.emoji.name);
-			const memberRoles = event.msg.channel.guild.members.get(event.userID).roles;
-			const found = memberRoles.find(role => role === reactRole.roleID);
-			if (found) {
-				await yuuko.removeGuildMemberRole(rrConfig2.guildID, event.userID, reactRole.roleID, 'react role through Chihaya');
-				const dmChannel = await yuuko.getDMChannel(event.userID);
-				dmChannel.createMessage(`You no longer have access to the <#${reactRole.channel}> channel.`);
-			} else {
-				await yuuko.addGuildMemberRole(rrConfig2.guildID, event.userID, reactRole.roleID, 'react role through Chihaya');
-				const dmChannel = await yuuko.getDMChannel(event.userID);
-				dmChannel.createMessage(`You now have access to the <#${reactRole.channel}> channel. To revoke access, simply react again.`);
-			}
-		});
-	}
-	*/
+		const newString = `${splitData[0]}=${stillTouchingGrass.join('|')}`;
+		await yuuko.editMessage(rrConfig.touchingGrassChannelID, rrConfig.touchingGrassMessageID, newString);
+		console.log('all this code has run');
+	}, 60 * 1000); // 60 * 1000 milsec
 });
 
 yuuko.editStatus('online', {
