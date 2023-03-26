@@ -22,7 +22,7 @@ module.exports = new Command('touchgrass', async (message, args, {yuuko}) => {
 	}
 	message.member.addRole(rrConfig.touchingGrassRoleID);
 	const infoMessage = await yuuko.getMessage(rrConfig.touchingGrassChannelID, rrConfig.touchingGrassMessageID);
-	const timeout = new Date().getTime() + args[0] * 60 * 60 * 1000;
+	const timeout = new Date().getTime() + parseFloat(args[0]) * 60 * 60 * 1000;
 	await yuuko.editMessage(rrConfig.touchingGrassChannelID, rrConfig.touchingGrassMessageID, `${infoMessage.content}${message.member.user.id}:${timeout}|`);
 	message.channel.createMessage(`${message.author.username} has chosen to touch grass!`);
 });
