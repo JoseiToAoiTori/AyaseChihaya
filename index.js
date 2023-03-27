@@ -108,13 +108,17 @@ yuuko.once('ready', async () => {
 		}
 		const allGrassTouchers = splitData[1].split('|');
 		const stillTouchingGrass = [];
+		const grassTouched = [];
 
 		for (const grassToucher of allGrassTouchers) {
 			if (grassToucher.length <= 0) continue;
-			if (parseInt(grassToucher.split(':')[1], 10) < new Date().getTime()) {
-				const id = grassToucher.split(':')[0];
+			const id = grassToucher.split(':')[0];
+			const timestamp = grassToucher.split(':')[1];
+			if (parseInt(timestamp, 10) < new Date().getTime()) {
+				grassTouched.push(id);
 				await yuuko.removeGuildMemberRole(rrConfig.guildID, id, rrConfig.touchingGrassRoleID);
 			} else {
+				if (grassTouched.find(el => el === id)) continue;
 				stillTouchingGrass.push(grassToucher);
 			}
 		}
