@@ -10,7 +10,7 @@ try {
 }
 
 module.exports = new Command('touchgrass', async (message, args, {yuuko}) => {
-	if (message.guildID !== rrConfig.guildID || !parseFloat(args[0]) || parseFloat(args[0]) < 0.02) return;
+	if (message.guildID !== rrConfig.guildID || !parseFloat(args[0]) || parseFloat(args[0]) < 0.02 || parseFloat(args[0]) > 1500) return;
 	if (args.length < 1) {
 		message.channel.createMessage({
 			embed: {
