@@ -27,7 +27,18 @@ module.exports = new Command('themes', async (message, args) => {
 		});
 	} else {
 		const qString = encodeURIComponent(args.join(' '));
-		const response = await superagent.get(`https://api.animethemes.moe/animetheme?q=${qString}&include=anime,song,animethemeentries.videos&page[size]=15`);
+		let response;
+		try {
+			response = await superagent.get(`https://api.animethemes.moe/animetheme?q=${qString}&include=anime,song,animethemeentries.videos&page[size]=15`);
+		} catch (error) {
+			message.channel.createMessage({
+				embed: {
+					title: 'Animethemes fucked up',
+					color: config.colour || process.env.COLOUR,
+				},
+			});
+			return;
+		}
 		let videos = response.body.animethemes;
 		if (videos.length) {
 			if (videos.length > 15) videos = videos.slice(0, 15);
