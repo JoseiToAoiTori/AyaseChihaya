@@ -19,8 +19,9 @@ module.exports = new Command('theme', async (message, args) => {
 		});
 	} else {
 		const qString = encodeURIComponent(args.join(' '));
+		let response;
 		try {
-			const response = await superagent.get(`https://api.animethemes.moe/animetheme?q=${qString}&include=animethemeentries.videos&page[size]=1`);
+			response = await superagent.get(`https://api.animethemes.moe/animetheme?q=${qString}&include=animethemeentries.videos&page[size]=1`);
 		} catch (error) {
 			message.channel.createMessage({
 				embed: {
