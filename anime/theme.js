@@ -19,7 +19,17 @@ module.exports = new Command('theme', async (message, args) => {
 		});
 	} else {
 		const qString = encodeURIComponent(args.join(' '));
-		const response = await superagent.get(`https://api.animethemes.moe/animetheme?q=${qString}&include=animethemeentries.videos&page[size]=1`);
+		try {
+			const response = await superagent.get(`https://api.animethemes.moe/animetheme?q=${qString}&include=animethemeentries.videos&page[size]=1`);
+		} catch (error) {
+			message.channel.createMessage({
+				embed: {
+					title: 'Animethemes fucked up',
+					color: config.colour || process.env.COLOUR,
+				},
+			});
+			return;
+		}
 		const videos = response.body.animethemes;
 		if (videos.length) {
 			message.channel.createMessage(`${videos[0].animethemeentries[0].videos[0].link}`);
