@@ -32,7 +32,7 @@ module.exports = new Command('theme', async (message, args) => {
 			return;
 		}
 		const videos = response.body.animethemes;
-		if (videos.length) {
+		if (videos.length && videos[0].animethemeentries.length && videos[0].animethemeentries[0].videos.length) {
 			message.channel.createMessage(`${videos[0].animethemeentries[0].videos[0].link}`);
 		} else {
 			message.channel.createMessage({
