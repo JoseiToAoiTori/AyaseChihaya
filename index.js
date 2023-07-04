@@ -134,7 +134,7 @@ yuuko.editStatus('online', {
 	url: 'https://github.com/JoseiToAoiTori/AyaseChihaya',
 });
 
-yuuko.on('messageCreate', message => {
+yuuko.on('messageCreate', async message => {
 	if (message.content.toLowerCase().includes('top 10 reasons') && (message.guildID === '514203145333899276' || message.guildID === '386933744025468939') && !message.author.bot) {
 		message.channel.createMessage(`1. You can help people out
 2. You can have a lot of fun with everyone
@@ -149,5 +149,11 @@ yuuko.on('messageCreate', message => {
 	}
 	if (message.content.toLowerCase().includes('antifa') && chance.bool({likelihood: 25})) {
 		message.channel.createMessage('T E R R O R I S T  O R G A N I Z A T I O N');
+	}
+
+	if (/https:\/\/twitter\.com/.test(message.content) && !message.author.bot) {
+		const content = message.content.replace(/https:\/\/twitter\.com/, 'https://vxtwitter.com');
+		await message.channel.createMessage(`${content}\n\n\n- Sent by <@${message.author.id}>`);
+		await message.delete();
 	}
 });
