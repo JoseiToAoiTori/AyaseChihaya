@@ -153,7 +153,11 @@ yuuko.on('messageCreate', async message => {
 
 	if (/https:\/\/twitter\.com/.test(message.content) && !message.author.bot) {
 		const content = message.content.replace(/https:\/\/twitter\.com/, 'https://vxtwitter.com');
-		await message.channel.createMessage(`${content}\n\n\n- Sent by <@${message.author.id}>`);
-		await message.delete();
+		try {
+			await message.channel.createMessage(`${content}\n\n\n- Sent by <@${message.author.id}>`);
+			await message.delete();
+		} catch (error) {
+			console.log('Screw you aztec');
+		}
 	}
 });
