@@ -151,8 +151,9 @@ yuuko.on('messageCreate', async message => {
 		message.channel.createMessage('T E R R O R I S T  O R G A N I Z A T I O N');
 	}
 
-	if (/https:\/\/twitter\.com/.test(message.content) && !message.author.bot) {
-		const content = message.content.replace(/https:\/\/twitter\.com/, 'https://vxtwitter.com');
+	if (/https:\/\/twitter|x\.com/.test(message.content) && !message.author.bot) {
+		let content = message.content.replace(/https:\/\/twitter\.com/, 'https://vxtwitter.com');
+		content = message.content.replace(/https:\/\/x\.com/, 'https://vxtwitter.com');
 		try {
 			await message.channel.createMessage(`${content}\n\n\n- Sent by ${message.author.username}`);
 			await message.delete();
