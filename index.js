@@ -151,7 +151,7 @@ yuuko.on('messageCreate', async message => {
 		message.channel.createMessage('T E R R O R I S T  O R G A N I Z A T I O N');
 	}
 
-	if (/https:\/\/twitter|x\.com/.test(message.content) && !message.author.bot) {
+	if (/https:\/\/twitter|https:\/\/x\.com/.test(message.content) && !message.author.bot) {
 		let content = message.content.replace(/https:\/\/twitter\.com/, 'https://vxtwitter.com');
 		content = content.replace(/https:\/\/x\.com/, 'https://vxtwitter.com');
 		try {
