@@ -152,8 +152,8 @@ yuuko.on('messageCreate', async message => {
 	}
 
 	if (/https:\/\/twitter|https:\/\/x\.com/.test(message.content) && /\/status\//.test(message.content) && !message.author.bot) {
-		let content = message.content.replace(/https:\/\/twitter\.com/, 'https://vxtwitter.com');
-		content = content.replace(/https:\/\/x\.com/, 'https://vxtwitter.com');
+		let content = message.content.replaceAll(/https:\/\/twitter\.com/g, 'https://vxtwitter.com');
+		content = content.replaceAll(/https:\/\/x\.com/g, 'https://vxtwitter.com');
 		try {
 			await message.channel.createMessage(`${content}\n\n\n- Sent by ${message.author.username}`);
 			await message.delete();
