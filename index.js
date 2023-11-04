@@ -116,7 +116,11 @@ yuuko.once('ready', async () => {
 			const timestamp = grassToucher.split(':')[1];
 			if (parseInt(timestamp, 10) < new Date().getTime()) {
 				grassTouched.push(id);
-				await yuuko.removeGuildMemberRole(rrConfig.guildID, id, rrConfig.touchingGrassRoleID);
+				try {
+					await yuuko.removeGuildMemberRole(rrConfig.guildID, id, rrConfig.touchingGrassRoleID);
+				} catch (error) {
+					console.log('rip');
+				}
 			} else {
 				if (grassTouched.find(el => el === id)) continue;
 				stillTouchingGrass.push(grassToucher);
