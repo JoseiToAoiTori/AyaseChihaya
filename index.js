@@ -156,7 +156,7 @@ yuuko.on('messageCreate', async message => {
 	}
 
 	if (message.content.toLowerCase() === 'who' && message.channel.id === '1071699552035409980' && message.author.id === '542254615329112065') {
-		message.channel.createMessage('https://kpop.fandom.com/\n\nLook them up you lazy bum');
+		message.channel.createMessage('<@542254615329112065> https://kpop.fandom.com/\n\nLook them up you lazy bum');
 	}
 
 	if (/https:\/\/twitter|https:\/\/x\.com/.test(message.content) && /\/status\//.test(message.content) && !message.author.bot) {
