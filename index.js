@@ -155,6 +155,10 @@ yuuko.on('messageCreate', async message => {
 		message.channel.createMessage('T E R R O R I S T  O R G A N I Z A T I O N');
 	}
 
+	if (message.content.toLowerCase() === 'who' && message.channel.id === '1071699552035409980' && message.author.id === '542254615329112065') {
+		message.channel.createMessage('https://kpop.fandom.com/\n\nLook them up you lazy bum');
+	}
+
 	if (/https:\/\/twitter|https:\/\/x\.com/.test(message.content) && /\/status\//.test(message.content) && !message.author.bot) {
 		let content = message.content.replaceAll(/https:\/\/twitter\.com/g, 'https://vxtwitter.com');
 		content = content.replaceAll(/https:\/\/x\.com/g, 'https://vxtwitter.com');
