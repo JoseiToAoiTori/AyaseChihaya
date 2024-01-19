@@ -118,6 +118,7 @@ yuuko.once('ready', async () => {
 				grassTouched.push(id);
 				try {
 					await yuuko.removeGuildMemberRole(rrConfig.guildID, id, rrConfig.touchingGrassRoleID);
+					await yuuko.createMessage('514220178511233024', `<@${id}> has stopped touching grass.`);
 				} catch (error) {
 					console.log('rip');
 				}
