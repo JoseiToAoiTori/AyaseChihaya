@@ -59,10 +59,6 @@ module.exports = new Command('help', message => {
 			{
 				name: ';theme Ping Pong Tada Hitori',
 				value: 'Returns the best match for the combination of anime/theme name.',
-			},
-			{
-				name: ';hltb Nier Automata',
-				value: 'Returns a detailed breakdown of how long it takes to beat the specified game with different playstyles.',
 			}],
 			footer: {
 				text: 'This is a bot developed by JoseiToAoiTori ★#6868 (/u/JoseiToAoiTori). Hyakunin Isshu data has been compiled by Shiara#0001 (/u/walking_the_way). Data for AnimeThemes was very poorly scraped from /r/AnimeThemes.',
