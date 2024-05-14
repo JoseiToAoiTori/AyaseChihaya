@@ -12,8 +12,8 @@
   "dependencies": {
     "chance": "^1.1.6",
     "distinct-colors": "^3.0.0",
-    "eris": "^0.13.4",
-    "eris-reactions": "^0.1.2",
+    "eris": "^0.17.2",
+    "eris-reactions": "^0.1.4",
     "eslint": "^7.2.0",
     "fuse.js": "^6.0.4",
     "howlongtobeat": "^1.7.0",
@@ -21,6 +21,6 @@
     "snoowrap": "^1.21.0",
     "superagent": "^6.1.0",
     "turndown": "^7.0.0",
-    "yuuko": "^2.0.2"
+    "yuuko": "^2.3.4"
   }
 }

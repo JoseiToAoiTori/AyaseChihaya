@@ -25,10 +25,10 @@ const yuuko = new Client({
 
 yuuko
 	.extendContext({yuuko})
-	.addCommandDir(path.join(__dirname, 'general'))
-	.addCommandDir(path.join(__dirname, 'anime'))
-	.addCommandDir(path.join(__dirname, 'chihayafuru'))
-	.addCommandDir(path.join(__dirname, 'refugee'))
+	.addDir(path.join(__dirname, 'general'))
+	.addDir(path.join(__dirname, 'anime'))
+	.addDir(path.join(__dirname, 'chihayafuru'))
+	.addDir(path.join(__dirname, 'refugee'))
 	.connect();
 
 yuuko.once('ready', async () => {
@@ -169,5 +169,15 @@ yuuko.on('messageCreate', async message => {
 		} catch (error) {
 			console.log('Screw you aztec');
 		}
+	}
+});
+
+const vxRegex = new RegExp(/https:\/\/vxtwitter\.com/g);
+
+// Allow people to delete vxtwitter messages if they are the author
+yuuko.on('messageReactionAdd', async (message, emote, reactor) => {
+	const msg = await yuuko.getMessage(message.channel.id, message.id);
+	if (msg.author.id === yuuko.user.id && emote.name === "✂️" && msg.content.includes(reactor.username) && vxRegex.test(msg.content)) {
+		msg.delete();
 	}
 });

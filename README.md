@@ -35,7 +35,7 @@ I made this bot environment variable friendly so I could deploy it on Heroku. He
 
 The bot is uhhhhhhh very much specialized to my very specific needs. If you're not in the servers it's built for, you'll have to take some extra steps.
 
-Remove `.addCommandDir(path.join(__dirname, 'refugee'))` in `index.js` and kill the refugee folder if you want. Some event listeners only work inside a specific server. You'll need to change a bunch of IDs if you want them to work inside another server. Idk I'd love this to be organized better but I really suck at this.
+Remove `.addDir(path.join(__dirname, 'refugee'))` in `index.js` and kill the refugee folder if you want. Some event listeners only work inside a specific server. You'll need to change a bunch of IDs if you want them to work inside another server. Idk I'd love this to be organized better but I really suck at this.
 
 ***
 
