@@ -35,6 +35,7 @@ module.exports = new Command('activity', async (incomingMessage, args, {yuuko}) 
 			labels.push(user);
 			dataset[0].data.push(userMessages.length);
 		}
+		dataset[0].data.sort((a, b) => a - b);
 		const chart = {
 			type: 'outlabeledPie',
 			data: {datasets: dataset, labels},
