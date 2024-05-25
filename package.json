@@ -18,6 +18,7 @@
     "fuse.js": "^6.0.4",
     "howlongtobeat": "^1.7.0",
     "meeks-prf-js": "^1.0.0",
+    "node-url-shortener": "^2.0.3",
     "snoowrap": "^1.21.0",
     "superagent": "^6.1.0",
     "turndown": "^7.0.0",
