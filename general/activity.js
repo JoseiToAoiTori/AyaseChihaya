@@ -1,5 +1,6 @@
 const {Command} = require('yuuko');
-const shortUrl = require("node-url-shortener");
+const superagent = require('superagent');
+const iwanthue = require('iwanthue');
 
 let config;
 
@@ -22,8 +23,10 @@ module.exports = new Command('activity', async (incomingMessage, args, {yuuko}) 
 		const messages = await channel.getMessages(20000);
 		console.log('Messages acquired');
 		const users = new Set(messages.map(message => message.author.username));
+		const palette = iwanthue(users.size)
 		const dataset = [{
 			data: [],
+			backgroundColor: palette
 		}];
 		const labels = [];
 		for (const user of users) {
@@ -33,19 +36,33 @@ module.exports = new Command('activity', async (incomingMessage, args, {yuuko}) 
 			dataset[0].data.push(userMessages.length);
 		}
 		const chart = {
-			type: 'pie',
+			type: 'outlabeledPie',
 			data: {datasets: dataset, labels},
+			"options": {
+				"plugins": {
+				  "legend": false,
+				  "outlabels": {
+					"text": "%l %p",
+					"color": "white",
+					"stretch": 30,
+					"font": {
+					  "resizable": true,
+					  "minSize": 12,
+					  "maxSize": 18
+					}
+				  }
+				}
+			}
 		};
 		let url = `https://quickchart.io/chart?c=${encodeURIComponent(JSON.stringify(chart))}`;
 		console.log(JSON.stringify(chart));
-		shortUrl.short(url, function (err, url) {
-			msg.delete();
-			incomingMessage.channel.createMessage({
-				embed: {
-					title: `Chart Generated At: ${url}`,
-					color: config.colour || process.env.COLOUR,
-				},
-			});
+		url = await superagent.get(`https://is.gd/create.php?format=simple&url=${encodeURIComponent(url)}`);
+		msg.delete();
+		incomingMessage.channel.createMessage({
+			embed: {
+				title: `Chart generated at: ${url.text}`,
+				color: config.colour || process.env.COLOUR,
+			},
 		});
 	} else {
 		incomingMessage.channel.createMessage({
