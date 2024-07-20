@@ -10,26 +10,6 @@ try {
 	config = {};
 }
 
-const singleQuery = `query ($page: Int) {
-	Page(page: $page, perPage: 50) {
-	  pageInfo {
-		perPage
-		currentPage
-		lastPage
-		hasNextPage
-	  }
-	  media(type: ANIME, countryOfOrigin: JP, status: RELEASING, sort: [POPULARITY_DESC], isAdult: false, format_in: [TV, TV_SHORT, MOVIE]) {
-		title {
-		  romaji
-		}
-		nextAiringEpisode {
-		  episode
-		  timeUntilAiring
-		}
-	  }
-	}
-  }
-  `;
 const bigQuery = `query ($search: String, $status: [MediaStatus]) {
 	Media(type: ANIME, search: $search, sort: SEARCH_MATCH, status_in: $status) {
 	  id
@@ -48,31 +28,8 @@ const bigQuery = `query ($search: String, $status: [MediaStatus]) {
   }
   `;
 
-module.exports = new Command('next', async (message, args) => {
+module.exports = new Command('next', async (message, args, {yuuko}) => {
 	if (args.length < 1) {
-		let page = 1;
-		let data;
-		let hasNextPage = true;
-		try {
-			data = await superagent
-				.post('https://graphql.anilist.co')
-				.send({query: singleQuery, variables: {page}})
-				.set('accept', 'json');
-		} catch (error) {
-			message.channel.createMessage(`${error}`);
-			return;
-		}
-		data = data.body.data.Page.media;
-		page++;
-		while (hasNextPage) {
-			const response = await superagent
-				.post('https://graphql.anilist.co')
-				.send({query: singleQuery, variables: {page}})
-				.set('accept', 'json');
-			data = [...data, ...response.body.data.Page.media];
-			hasNextPage = response.body.data.Page.pageInfo.hasNextPage;
-			page++;
-		}
 		const embed = {
 			embed: {
 				title: 'Schedule for Today (Japan Airing)',
@@ -81,13 +38,11 @@ module.exports = new Command('next', async (message, args) => {
 				fields: [],
 			},
 		};
+		let data = yuuko.seasonalShows;
+		data = data.filter(anime => anime.nextEpisodeAiring - Date.now() > 0 && anime.nextEpisodeAiring - Date.now() < 86400000);
+		data.sort((a, b) => a.nextEpisodeAiring - b.nextEpisodeAiring);
 		for (const anime of data) {
-			if (anime.nextAiringEpisode) console.log(anime);
-		}
-		data = data.filter(anime => anime.nextAiringEpisode && anime.nextAiringEpisode.timeUntilAiring && anime.nextAiringEpisode.timeUntilAiring < 86400);
-		data.sort((a, b) => a.nextAiringEpisode.timeUntilAiring - b.nextAiringEpisode.timeUntilAiring);
-		for (const anime of data) {
-			let nextEp = new Date(anime.nextAiringEpisode.timeUntilAiring * 1000);
+			let nextEp = new Date(anime.nextEpisodeAiring - Date.now());
 			const minutes = Math.floor(nextEp / 1000 / 60 % 60);
 			const hours = Math.floor(nextEp / (1000 * 60 * 60) % 24);
 			if (hours === 0 && minutes === 0) nextEp = 'Literal seconds away';

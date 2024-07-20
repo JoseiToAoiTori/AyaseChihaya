@@ -9,6 +9,8 @@ const ReactionHandler = require('eris-reactions');
 const rrConfig = require('./reactRoles.json');
 // const rrConfig2 = require('./reactRoles2.json');
 
+const nextCache = require('./next-cache');
+
 let config;
 
 try {
@@ -99,6 +101,21 @@ yuuko.once('ready', async () => {
 	// }
 	//
 
+	// Yo fix this copypaste bullshit later
+	let data = await nextCache.getSeasonalShows();
+	for (const show of data) {
+		show.nextEpisodeAiring = Date.now() + show.nextAiringEpisode.timeUntilAiring * 1000;
+	}
+	yuuko.seasonalShows = data;
+	console.log('Seasonals loaded');
+	setInterval(async () => {
+		data = await nextCache.getSeasonalShows();
+		for (const show of data) {
+			show.nextEpisodeAiring = Date.now() + show.nextAiringEpisode.timeUntilAiring * 1000;
+		}
+		yuuko.seasonalShows = data;
+		console.log('Seasonals loaded');
+	}, 1800 * 1000);
 
 	setInterval(async () => {
 		const message = await yuuko.getMessage(rrConfig.touchingGrassChannelID, rrConfig.touchingGrassMessageID);
@@ -177,7 +194,7 @@ const vxRegex = new RegExp(/https:\/\/vxtwitter\.com/g);
 // Allow people to delete vxtwitter messages if they are the author
 yuuko.on('messageReactionAdd', async (message, emote, reactor) => {
 	const msg = await yuuko.getMessage(message.channel.id, message.id);
-	if (msg.author.id === yuuko.user.id && emote.name === "✂️" && msg.content.includes(reactor.username) && vxRegex.test(msg.content)) {
+	if (msg.author.id === yuuko.user.id && emote.name === '✂️' && msg.content.includes(reactor.username) && vxRegex.test(msg.content)) {
 		msg.delete();
 	}
 });
