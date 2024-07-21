@@ -86,9 +86,9 @@ module.exports = new Command('anime', async (message, args) => {
 	let nextEp;
 	if (anime.nextAiringEpisode) {
 		nextEp = new Date(anime.nextAiringEpisode.timeUntilAiring * 1000);
-		const minutes = Math.floor((nextEp/1000/60) % 60);
-		const hours = Math.floor((nextEp/(1000*60*60)) % 24);
-		const days = Math.floor(nextEp/(1000*60*60*24));
+		const minutes = Math.floor(nextEp / 1000 / 60 % 60);
+		const hours = Math.floor(nextEp / (1000 * 60 * 60) % 24);
+		const days = Math.floor(nextEp / (1000 * 60 * 60 * 24));
 		if (days === 0 && hours === 0 && minutes === 0) nextEp = 'Literal seconds away';
 		else if (days === 0 && hours === 0) nextEp = `${minutes} minutes`;
 		else if (days === 0) nextEp = `${hours} hours ${minutes} minutes`;
@@ -97,7 +97,7 @@ module.exports = new Command('anime', async (message, args) => {
 
 	const embed = {
 		embed: {
-			color: config.colour  || process.env.COLOUR,
+			color: config.colour || process.env.COLOUR,
 			title: anime.title.romaji,
 			thumbnail: {
 				url: anime.coverImage.large,
@@ -160,7 +160,8 @@ module.exports = new Command('anime', async (message, args) => {
 	}
 	embed.embed.fields.push({
 		name: 'Description',
-		value: anime.description ? anime.description.length >= 1020 ? turndownService.turndown(anime.description.substring(0, 1020)) + '...' : turndownService.turndown(anime.description) : '*No description provided*',
+		// eslint-disable-next-line no-nested-ternary
+		value: anime.description ? anime.description.length >= 1020 ? `${turndownService.turndown(anime.description.substring(0, 1020))}...` : turndownService.turndown(anime.description) : '*No description provided*',
 	});
 	message.channel.createMessage(embed);
 });
