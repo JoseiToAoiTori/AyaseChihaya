@@ -46,7 +46,7 @@ module.exports = new Command('calendar', (message, args, {yuuko}) => {
 		enDay = enDay.charAt(0).toUpperCase() + enDay.slice(1);
 		const embed = {
 			embed: {
-				title: `Schedule for ${enDay}`,
+				title: `Schedule for ${enDay} (UTC+0)`,
 				url: 'http://anichart.net',
 				color: config.colour || process.env.COLOUR,
 				fields: [],
