@@ -8,7 +8,7 @@ try {
 	config = {};
 }
 
-module.exports = new Command('calendar', async (message, args, {yuuko}) => {
+module.exports = new Command('calendar', (message, args, {yuuko}) => {
 	let data = yuuko.seasonalShows;
 	for (const show of data) {
 		show.day = new Date(show.nextEpisodeAiring).getDay();
@@ -43,9 +43,10 @@ module.exports = new Command('calendar', async (message, args, {yuuko}) => {
 			bDate.setDate(1);
 			return aDate - bDate;
 		});
+		enDay = enDay.charAt(0).toUpperCase() + enDay.slice(1);
 		const embed = {
 			embed: {
-				title: `Schedule for ${enDay.charAt(0).toUpperCase()}`,
+				title: `Schedule for ${enDay}`,
 				url: 'http://anichart.net',
 				color: config.colour || process.env.COLOUR,
 				fields: [],
