@@ -6,7 +6,7 @@ const singleQuery = `query ($startdateGreater: FuzzyDateInt, $startdateLesser: F
       pageInfo {
         hasNextPage
       }
-      media(startDate_greater: $startdateGreater, startDate_lesser: $startdateLesser, type: ANIME, sort: TITLE_ROMAJI) {
+      media(format_in: [TV, TV_SHORT], startDate_greater: $startdateGreater, startDate_lesser: $startdateLesser, type: ANIME, sort: TITLE_ROMAJI) {
         title {
           romaji
         }
