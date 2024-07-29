@@ -49,16 +49,21 @@ async function getSeasonalShows () {
 	}
 	data = data.body.data.Page.media;
 	page++;
-	while (hasNextPage) {
-		const response = await superagent
-			.post('https://graphql.anilist.co')
-			.send({query: singleQuery, variables: {page, startdateGreater, startdateLesser}})
-			.set('accept', 'json');
-		data = [...data, ...response.body.data.Page.media];
-		hasNextPage = response.body.data.Page.pageInfo.hasNextPage;
-		page++;
+	try {
+		while (hasNextPage) {
+			const response = await superagent
+				.post('https://graphql.anilist.co')
+				.send({query: singleQuery, variables: {page, startdateGreater, startdateLesser}})
+				.set('accept', 'json');
+			data = [...data, ...response.body.data.Page.media];
+			hasNextPage = response.body.data.Page.pageInfo.hasNextPage;
+			page++;
+		}
+		data = data.filter(anime => anime.nextAiringEpisode && anime.nextAiringEpisode.timeUntilAiring);
+	} catch (error) {
+		console.log(error);
+		return;
 	}
-	data = data.filter(anime => anime.nextAiringEpisode && anime.nextAiringEpisode.timeUntilAiring);
 	return data;
 }
 

@@ -102,19 +102,28 @@ yuuko.once('ready', async () => {
 	//
 
 	// Yo fix this copypaste bullshit later
-	let data = await nextCache.getSeasonalShows();
-	for (const show of data) {
-		show.nextEpisodeAiring = Date.now() + show.nextAiringEpisode.timeUntilAiring * 1000;
-	}
-	yuuko.seasonalShows = data;
-	console.log('Seasonals loaded');
-	setInterval(async () => {
+	let data;
+	try {
 		data = await nextCache.getSeasonalShows();
 		for (const show of data) {
 			show.nextEpisodeAiring = Date.now() + show.nextAiringEpisode.timeUntilAiring * 1000;
 		}
 		yuuko.seasonalShows = data;
 		console.log('Seasonals loaded');
+	} catch (error) {
+		console.log(error);
+	}
+	setInterval(async () => {
+		try {
+			data = await nextCache.getSeasonalShows();
+			for (const show of data) {
+				show.nextEpisodeAiring = Date.now() + show.nextAiringEpisode.timeUntilAiring * 1000;
+			}
+			yuuko.seasonalShows = data;
+			console.log('Seasonals loaded');
+		} catch (error) {
+			console.log(error);
+		}
 	}, 1800 * 1000);
 
 	setInterval(async () => {

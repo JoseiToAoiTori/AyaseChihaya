@@ -30,30 +30,34 @@ const bigQuery = `query ($search: String, $status: [MediaStatus]) {
 
 module.exports = new Command('next', async (message, args, {yuuko}) => {
 	if (args.length < 1) {
-		const embed = {
-			embed: {
-				title: 'Schedule for Today (Japan Airing)',
-				url: 'http://anichart.net',
-				color: config.colour || process.env.COLOUR,
-				fields: [],
-			},
-		};
-		let data = yuuko.seasonalShows;
-		data = data.filter(anime => anime.nextEpisodeAiring - Date.now() > 0 && anime.nextEpisodeAiring - Date.now() < 86400000);
-		data.sort((a, b) => a.nextEpisodeAiring - b.nextEpisodeAiring);
-		for (const anime of data) {
-			let nextEp = new Date(anime.nextEpisodeAiring - Date.now());
-			const minutes = Math.floor(nextEp / 1000 / 60 % 60);
-			const hours = Math.floor(nextEp / (1000 * 60 * 60) % 24);
-			if (hours === 0 && minutes === 0) nextEp = 'Literal seconds away';
-			else if (hours === 0) nextEp = `${minutes} minutes`;
-			else nextEp = `${hours} hours ${minutes} minutes`;
-			embed.embed.fields.push({
-				name: `${anime.title.romaji} ${anime.nextAiringEpisode.episode}`,
-				value: nextEp,
-			});
+		try {
+			const embed = {
+				embed: {
+					title: 'Schedule for Today (Japan Airing)',
+					url: 'http://anichart.net',
+					color: config.colour || process.env.COLOUR,
+					fields: [],
+				},
+			};
+			let data = yuuko.seasonalShows;
+			data = data.filter(anime => anime.nextEpisodeAiring - Date.now() > 0 && anime.nextEpisodeAiring - Date.now() < 86400000);
+			data.sort((a, b) => a.nextEpisodeAiring - b.nextEpisodeAiring);
+			for (const anime of data) {
+				let nextEp = new Date(anime.nextEpisodeAiring - Date.now());
+				const minutes = Math.floor(nextEp / 1000 / 60 % 60);
+				const hours = Math.floor(nextEp / (1000 * 60 * 60) % 24);
+				if (hours === 0 && minutes === 0) nextEp = 'Literal seconds away';
+				else if (hours === 0) nextEp = `${minutes} minutes`;
+				else nextEp = `${hours} hours ${minutes} minutes`;
+				embed.embed.fields.push({
+					name: `${anime.title.romaji} ${anime.nextAiringEpisode.episode}`,
+					value: nextEp,
+				});
+			}
+			message.channel.createMessage(embed);
+		} catch (error) {
+			console.log(error);
 		}
-		message.channel.createMessage(embed);
 	} else {
 		const search = args.join(' ');
 		let data;
