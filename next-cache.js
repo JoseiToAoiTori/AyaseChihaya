@@ -6,7 +6,7 @@ const singleQuery = `query ($startdateGreater: FuzzyDateInt, $startdateLesser: F
       pageInfo {
         hasNextPage
       }
-      media(format_in: [TV, TV_SHORT], startDate_greater: $startdateGreater, startDate_lesser: $startdateLesser, type: ANIME, sort: TITLE_ROMAJI) {
+      media(format_in: [TV, TV_SHORT], startDate_greater: $startdateGreater, startDate_lesser: $startdateLesser, type: ANIME, sort: TITLE_ROMAJI, status_not_in: [CANCELLED, FINISHED]) {
         title {
           romaji
         }
@@ -36,7 +36,7 @@ async function getSeasonalShows () {
 	// FALL
 	// Months September to November
 	//
-	const startdateGreater = 20240801;
+	const startdateGreater = 20240601;
 	const startdateLesser = 20241130;
 	try {
 		data = await superagent
