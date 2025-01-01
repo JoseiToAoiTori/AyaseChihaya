@@ -36,8 +36,8 @@ async function getSeasonalShows () {
 	// FALL
 	// Months September to November
 	//
-	const startdateGreater = 20240601;
-	const startdateLesser = 20241130;
+	const startdateGreater = 20241201;
+	const startdateLesser = 20250230;
 	try {
 		data = await superagent
 			.post('https://graphql.anilist.co')
