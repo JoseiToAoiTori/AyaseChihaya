@@ -216,12 +216,14 @@ yuuko.on('messageCreate', async message => {
 	}
 });
 
-const vxRegex = new RegExp(/https:\/\/girlcockx\.com/g);
+const vxRegex = new RegExp(/https:\/\/girlcockx|fxtwitter\.com/g);
 
 // Allow people to delete girlcockx messages if they are the author
 yuuko.on('messageReactionAdd', async (message, emote, reactor) => {
 	const msg = await yuuko.getMessage(message.channel.id, message.id);
 	if (msg.author.id === yuuko.user.id && emote.name === '✂️' && msg.content.includes(reactor.username) && vxRegex.test(msg.content)) {
-		msg.delete();
+		setTimeout(async () => {
+			await msg.delete();
+		}, 2000);
 	}
 });
