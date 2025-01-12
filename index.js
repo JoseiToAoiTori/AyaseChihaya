@@ -198,18 +198,20 @@ yuuko.on('messageCreate', async message => {
 		}
 	} else if (/https:\/\/vxtwitter|https:\/\/fixvx|https:\/\/girlcockx|https:\/\/fxtwitter\.com/.test(message.content) && /\/status\//.test(message.content) && !message.author.bot) {
 		const containsJapanese = /[\u3040-\u30FF\u4E00-\u9FFF]/;
-		const embedsContainJapanese = message.embeds.some(embed => containsJapanese.test(embed.description || ''));
-		if (embedsContainJapanese) {
-			let content = message.content.replace(/(https:\/\/(?:girlcockx|vxtwitter|fixvx|fxtwitter)\.com\/[^\s?]+)(?:\?.*?)?(\/en)?(?=\s|$)/g, '$1/en');
-			content = content.replace(/(https?:\/\/[^\s]+)\/en\/en/g, '$1/en');
-			content = content.replace(/https:\/\/(vxtwitter|fixvx)\.com/g, 'https://girlcockx.com');
-			try {
-				await message.channel.createMessage(`${content}\n\n\n- Sent by ${message.author.username}`);
-				await message.delete();
-			} catch (error) {
-				console.log('Screw you aztec');
+		await setTimeout(async () => {
+			const embedsContainJapanese = message.embeds.some(embed => containsJapanese.test(embed.description || ''));
+			if (embedsContainJapanese) {
+				let content = message.content.replace(/(https:\/\/(?:girlcockx|vxtwitter|fixvx|fxtwitter)\.com\/[^\s?]+)(?:\?.*?)?(\/en)?(?=\s|$)/g, '$1/en');
+				content = content.replace(/(https?:\/\/[^\s]+)\/en\/en/g, '$1/en');
+				content = content.replace(/https:\/\/(vxtwitter|fixvx)\.com/g, 'https://girlcockx.com');
+				try {
+					await message.channel.createMessage(`${content}\n\n\n- Sent by ${message.author.username}`);
+					await message.delete();
+				} catch (error) {
+					console.log('Screw you aztec');
+				}
 			}
-		}
+		}, 2000);
 	}
 });
 
