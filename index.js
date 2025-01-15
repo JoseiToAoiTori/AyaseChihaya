@@ -199,7 +199,10 @@ yuuko.on('messageCreate', async message => {
 	} else if (/https:\/\/vxtwitter|https:\/\/fixvx|https:\/\/girlcockx|https:\/\/fxtwitter\.com/.test(message.content) && /\/status\//.test(message.content) && !message.author.bot) {
 		const containsJapanese = /[\u3040-\u30FF\u4E00-\u9FFF]/;
 		setTimeout(async () => {
-			const embedsContainJapanese = message.embeds.some(embed => containsJapanese.test((embed.description || '').replace(/#[\wぁ-んァ-ン一-龥々ー]+/g, '')));
+			const embedsContainJapanese = message.embeds.some(embed => containsJapanese
+				.test((embed.description || '')
+					.replace(/#[\wぁ-んァ-ン一-龥々ー]+/g, '')
+					.replace(/<[^>]+>/g, '')));
 			if (embedsContainJapanese) {
 				let content = message.content.replace(/(https:\/\/(?:girlcockx|vxtwitter|fixvx|fxtwitter)\.com\/[^\s?]+)(?:\?.*?)?(\/en)?(?=\s|$)/g, '$1/en');
 				if (!content.includes('/en/en')) {
