@@ -208,7 +208,7 @@ yuuko.on('messageCreate', async message => {
 				if (!content.includes('/en/en')) {
 					content = content.replace(/https:\/\/(vxtwitter|fixvx)\.com/g, 'https://girlcockx.com');
 					try {
-						await message.channel.createMessage(`${content}\n\n\n- Sent by ${message.author.username}`);
+						await message.channel.createMessage(`${content}\n\n- Sent by ${message.author.username}`);
 						await message.delete();
 					} catch (error) {
 						console.log('Screw you aztec');
