@@ -5,6 +5,7 @@ const path = require('path');
 const Chance = require('chance');
 const chance = new Chance();
 const ReactionHandler = require('eris-reactions');
+const superagent = require('superagent');
 
 const rrConfig = require('./reactRoles.json');
 // const rrConfig2 = require('./reactRoles2.json');
@@ -157,7 +158,69 @@ yuuko.once('ready', async () => {
 		if (stillTouchingGrass.length > 0) newString = `${newString}|`;
 		await yuuko.editMessage(rrConfig.touchingGrassChannelID, rrConfig.touchingGrassMessageID, newString);
 	}, 60 * 1000); // 60 * 1000 milsec
+	// scheduleMidnightExecution();
 });
+
+// function runAtMidnight() {
+// 	console.log("It's midnight!");
+// 	const rogalandPromise = new Promise(async (resolve, reject) => {
+// 		try {
+// 			const response = await superagent.get('https://www.finn.no/job/job-search-page/api/search/SEARCH_ID_JOB_FULLTIME?occupation=0.23&location=1.20001.20012');
+// 		} catch (error) {
+// 			reject(error);
+// 		}
+// 	});
+// 	const allPromise = new Promise(async (resolve, reject) => {
+// 		try {
+// 			const response = await superagent.get('https://www.finn.no/job/job-search-page/api/search/SEARCH_ID_JOB_FULLTIME?occupation=0.23');
+// 			resolve(response);
+// 		} catch (error) {
+// 			reject(error);
+// 		}
+// 	});
+
+// 	Promise.all([rogalandPromise, allPromise]).then(async responses => {
+// 		const oneDay = new Date().getTime() + (1 * 24 * 60 * 60 * 1000)
+// 		const rogalandResponses = responses[0].docs.filter(response => response.timestamp < oneDay);
+// 		const allResponses = responses[1].docs.filter(response => response.timestamp < oneDay);
+
+// 		let rogalandJobs = ``;
+// 		let allJobs = ``;
+
+// 		for (const job of rogalandResponses) {
+// 			rogalandJobs += `(${job.heading})[${job.canonical_url}]\n`;
+// 		}
+
+// 		for (const job of allResponses) {
+// 			allJobs += `(${job.heading})[${job.canonical_url}]\n`;
+// 		}
+
+// 		await yuuko.createMessage('1337369816993894493', {
+// 			embed: {
+// 				title: 'New jobs in Rogaland',
+// 				description: rogalandJobs,
+// 				color: config.colour || process.env.COLOUR,
+// 			},
+// 		});
+
+// 		await yuuko.createMessage('1337369816993894493', {
+// 			embed: {
+// 				title: 'New jobs in Norway',
+// 				description: allJobs,
+// 				color: config.colour || process.env.COLOUR,
+// 			},
+// 		});
+// 		scheduleMidnightExecution();
+// 	});
+//   }
+
+// function scheduleMidnightExecution() {
+// 	const now = new Date();
+// 	const nextMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+// 	const millisecondsUntilMidnight = nextMidnight.getTime() - now.getTime();
+  
+// 	setTimeout(runAtMidnight(), millisecondsUntilMidnight);
+// }
 
 yuuko.editStatus('online', {
 	name: ';help for list of commands',
