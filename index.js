@@ -38,7 +38,7 @@ function runAtMidnight () {
 	console.log("It's midnight!");
 	const rogalandPromise = new Promise(async (resolve, reject) => {
 		try {
-			const response = await superagent.get('https://www.finn.no/job/job-search-page/api/search/SEARCH_ID_JOB_FULLTIME?occupation=0.23&location=1.20001.20012');
+			const response = await superagent.get('https://www.finn.no/job/job-search-page/api/search/SEARCH_ID_JOB_FULLTIME?occupation=0.23&location=1.20001.20012&sort=PUBLISHED_DESC');
 			resolve(response.body);
 		} catch (error) {
 			reject(error);
@@ -46,14 +46,14 @@ function runAtMidnight () {
 	});
 	const allPromise = new Promise(async (resolve, reject) => {
 		try {
-			const response = await superagent.get('https://www.finn.no/job/job-search-page/api/search/SEARCH_ID_JOB_FULLTIME?occupation=0.23');
+			const response = await superagent.get('https://www.finn.no/job/job-search-page/api/search/SEARCH_ID_JOB_FULLTIME?occupation=0.23&sort=PUBLISHED_DESC');
 			resolve(response.body);
 		} catch (error) {
 			reject(error);
 		}
 	});
 
-	Promise.all([rogalandPromise, allPromise]).then(async responses => {
+	Promise.all([rogalandPromise, allPromise]).then(responses => {
 		const oneDay = new Date().getTime() + 1 * 24 * 60 * 60 * 1000;
 		const rogalandResponses = responses[0].docs.filter(response => response.timestamp < oneDay);
 		const allResponses = responses[1].docs.filter(response => response.timestamp < oneDay);
