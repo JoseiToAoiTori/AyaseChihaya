@@ -34,6 +34,88 @@ yuuko
 	.addDir(path.join(__dirname, 'refugee'))
 	.connect();
 
+function runAtMidnight () {
+	console.log("It's midnight!");
+	const rogalandPromise = new Promise(async (resolve, reject) => {
+		try {
+			const response = await superagent.get('https://www.finn.no/job/job-search-page/api/search/SEARCH_ID_JOB_FULLTIME?occupation=0.23&location=1.20001.20012');
+			resolve(response.body);
+		} catch (error) {
+			reject(error);
+		}
+	});
+	const allPromise = new Promise(async (resolve, reject) => {
+		try {
+			const response = await superagent.get('https://www.finn.no/job/job-search-page/api/search/SEARCH_ID_JOB_FULLTIME?occupation=0.23');
+			resolve(response.body);
+		} catch (error) {
+			reject(error);
+		}
+	});
+
+	Promise.all([rogalandPromise, allPromise]).then(async responses => {
+		const oneDay = new Date().getTime() + 1 * 24 * 60 * 60 * 1000;
+		const rogalandResponses = responses[0].docs.filter(response => response.timestamp < oneDay);
+		const allResponses = responses[1].docs.filter(response => response.timestamp < oneDay);
+
+		const rogalandJobs = rogalandResponses.map(job => `[${job.heading}](${job.canonical_url})\n`);
+		const allJobs = allResponses.map(job => `[${job.heading}](${job.canonical_url})\n`);
+
+		const rogalandText = rogalandJobs.reduce((chunks, job) => {
+			const lastChunk = chunks[chunks.length - 1] || '';
+			const newChunk = lastChunk + job;
+
+			if (newChunk.length <= 4096) {
+				chunks[chunks.length - 1] = newChunk;
+			} else {
+				chunks.push(job);
+			}
+			return chunks;
+		}, ['']);
+
+		const allText = allJobs.reduce((chunks, job) => {
+			const lastChunk = chunks[chunks.length - 1] || '';
+			const newChunk = lastChunk + job;
+
+			if (newChunk.length <= 4096) {
+				chunks[chunks.length - 1] = newChunk;
+			} else {
+				chunks.push(job);
+			}
+			return chunks;
+		}, ['']);
+
+		for (const message of rogalandText) {
+			yuuko.createMessage('1337374674585260093', {
+				embed: {
+					title: 'New jobs in Rogaland',
+					description: message,
+					color: config.colour || process.env.COLOUR,
+				},
+			});
+		}
+
+		for (const message of allText) {
+			yuuko.createMessage('1337374696068612129', {
+				embed: {
+					title: 'New jobs in Norway',
+					description: message,
+					color: config.colour || process.env.COLOUR,
+				},
+			});
+		}
+		// eslint-disable-next-line no-use-before-define
+		scheduleMidnightExecution();
+	});
+}
+
+function scheduleMidnightExecution () {
+	const now = new Date();
+	const nextMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+	const millisecondsUntilMidnight = nextMidnight.getTime() - now.getTime();
+	setTimeout(runAtMidnight, millisecondsUntilMidnight);
+}
+
 yuuko.once('ready', async () => {
 	console.log('Successfully connected to Discord.');
 	if (rrConfig.channelID && rrConfig.messageID && rrConfig.guildID) {
@@ -158,69 +240,8 @@ yuuko.once('ready', async () => {
 		if (stillTouchingGrass.length > 0) newString = `${newString}|`;
 		await yuuko.editMessage(rrConfig.touchingGrassChannelID, rrConfig.touchingGrassMessageID, newString);
 	}, 60 * 1000); // 60 * 1000 milsec
-	// scheduleMidnightExecution();
+	scheduleMidnightExecution();
 });
-
-// function runAtMidnight() {
-// 	console.log("It's midnight!");
-// 	const rogalandPromise = new Promise(async (resolve, reject) => {
-// 		try {
-// 			const response = await superagent.get('https://www.finn.no/job/job-search-page/api/search/SEARCH_ID_JOB_FULLTIME?occupation=0.23&location=1.20001.20012');
-// 		} catch (error) {
-// 			reject(error);
-// 		}
-// 	});
-// 	const allPromise = new Promise(async (resolve, reject) => {
-// 		try {
-// 			const response = await superagent.get('https://www.finn.no/job/job-search-page/api/search/SEARCH_ID_JOB_FULLTIME?occupation=0.23');
-// 			resolve(response);
-// 		} catch (error) {
-// 			reject(error);
-// 		}
-// 	});
-
-// 	Promise.all([rogalandPromise, allPromise]).then(async responses => {
-// 		const oneDay = new Date().getTime() + (1 * 24 * 60 * 60 * 1000)
-// 		const rogalandResponses = responses[0].docs.filter(response => response.timestamp < oneDay);
-// 		const allResponses = responses[1].docs.filter(response => response.timestamp < oneDay);
-
-// 		let rogalandJobs = ``;
-// 		let allJobs = ``;
-
-// 		for (const job of rogalandResponses) {
-// 			rogalandJobs += `(${job.heading})[${job.canonical_url}]\n`;
-// 		}
-
-// 		for (const job of allResponses) {
-// 			allJobs += `(${job.heading})[${job.canonical_url}]\n`;
-// 		}
-
-// 		await yuuko.createMessage('1337369816993894493', {
-// 			embed: {
-// 				title: 'New jobs in Rogaland',
-// 				description: rogalandJobs,
-// 				color: config.colour || process.env.COLOUR,
-// 			},
-// 		});
-
-// 		await yuuko.createMessage('1337369816993894493', {
-// 			embed: {
-// 				title: 'New jobs in Norway',
-// 				description: allJobs,
-// 				color: config.colour || process.env.COLOUR,
-// 			},
-// 		});
-// 		scheduleMidnightExecution();
-// 	});
-//   }
-
-// function scheduleMidnightExecution() {
-// 	const now = new Date();
-// 	const nextMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
-// 	const millisecondsUntilMidnight = nextMidnight.getTime() - now.getTime();
-  
-// 	setTimeout(runAtMidnight(), millisecondsUntilMidnight);
-// }
 
 yuuko.editStatus('online', {
 	name: ';help for list of commands',
