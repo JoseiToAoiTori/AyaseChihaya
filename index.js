@@ -54,12 +54,12 @@ function runAtMidnight () {
 	});
 
 	Promise.all([rogalandPromise, allPromise]).then(responses => {
-		const oneDay = new Date().getTime() + 1 * 24 * 60 * 60 * 1000;
-		const rogalandResponses = responses[0].docs.filter(response => response.timestamp < oneDay);
-		const allResponses = responses[1].docs.filter(response => response.timestamp < oneDay);
+		const oneDay = new Date().getTime() - 1 * 24 * 60 * 60 * 1000;
+		const rogalandResponses = responses[0].docs.filter(response => response.published > oneDay);
+		const allResponses = responses[1].docs.filter(response => response.published > oneDay);
 
-		const rogalandJobs = rogalandResponses.map(job => `[${job.heading}](${job.canonical_url})\n`);
-		const allJobs = allResponses.map(job => `[${job.heading}](${job.canonical_url})\n`);
+		const rogalandJobs = rogalandResponses.map(job => `[${job.job_title}](${job.canonical_url})\n`);
+		const allJobs = allResponses.map(job => `[${job.job_title}](${job.canonical_url})\n`);
 
 		const rogalandText = rogalandJobs.reduce((chunks, job) => {
 			const lastChunk = chunks[chunks.length - 1] || '';
