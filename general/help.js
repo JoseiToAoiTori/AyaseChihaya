@@ -33,6 +33,14 @@ module.exports = new Command('help', message => {
 				value: 'Returns info about the AniList user specified.',
 			},
 			{
+				name: ';calendar',
+				value: 'Displays all shows airing today in UTC time. Not an indicator of when they\'re available for streaming.',
+			},
+			{
+				name: ';calendar monday',
+				value: 'Displays all shows airing on Monday in UTC time. Not an indicator of when they\'re available for streaming.',
+			},
+			{
 				name: ';next',
 				value: 'Displays countdowns to all airing anime in the next 24 hours according to AniList API (Japan airtime).',
 			},
@@ -61,7 +69,7 @@ module.exports = new Command('help', message => {
 				value: 'Returns the best match for the combination of anime/theme name.',
 			}],
 			footer: {
-				text: 'This is a bot developed by JoseiToAoiTori ★#6868 (/u/JoseiToAoiTori). Hyakunin Isshu data has been compiled by Shiara#0001 (/u/walking_the_way). Data for AnimeThemes was very poorly scraped from /r/AnimeThemes.',
+				text: 'This is a bot developed by joseitoaoitori (/u/JoseiToAoiTori). Hyakunin Isshu data has been compiled by shiara (/u/walking_the_way). Data for AnimeThemes was very poorly scraped from /r/AnimeThemes.',
 				icon_url: config.avatar || process.env.AVATAR,
 			},
 		},
