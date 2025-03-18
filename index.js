@@ -275,7 +275,7 @@ yuuko.on('messageCreate', async message => {
 		content = content.replaceAll(/https:\/\/x\.com/g, 'https://girlcockx.com');
 		content = content.replaceAll(/(https:\/\/fxtwitter\.com\/[^\s?]+)(?:\?.*?)?(\/en)?(?=\s|$)/g, '$1/en');
 		try {
-			await message.channel.createMessage(`${content}\n\n- Sent by ${message.author.username}`);
+			await message.channel.createMessage(`${message.author.username}: ${content}`);
 			await message.delete();
 		} catch (error) {
 			console.log('Screw you aztec');
