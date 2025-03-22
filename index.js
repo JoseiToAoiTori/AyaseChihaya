@@ -266,8 +266,8 @@ yuuko.on('messageCreate', async message => {
 		message.channel.createMessage('T E R R O R I S T  O R G A N I Z A T I O N');
 	}
 
-	if (message.content.toLowerCase() === 'who' && message.channel.id === '1071699552035409980' && message.author.id === '542254615329112065') {
-		message.channel.createMessage('<@542254615329112065> https://kpop.fandom.com/\n\nLook them up you lazy bum');
+	if (message.content.toLowerCase() === 'who' && message.channel.id === '1071699552035409980') {
+		message.channel.createMessage(`<@${message.author.id}> https://kpop.fandom.com/\n\nLook them up you lazy bum`);
 	}
 
 	if (/https:\/\/twitter|https:\/\/x\.com/.test(message.content) && /\/status\//.test(message.content) && !message.author.bot) {
@@ -282,24 +282,24 @@ yuuko.on('messageCreate', async message => {
 		}
 	} else if (/https:\/\/vxtwitter|https:\/\/fixvx|https:\/\/girlcockx|https:\/\/fxtwitter\.com/.test(message.content) && /\/status\//.test(message.content) && !message.author.bot) {
 		const containsJapanese = /[\u3040-\u30FF\u4E00-\u9FFF]/;
-		// setTimeout(async () => {
-		// 	const embedsContainJapanese = message.embeds.some(embed => containsJapanese
-		// 		.test((embed.description || '')
-		// 			.replace(/#[\wぁ-んァ-ン一-龥々ー]+/g, '')
-		// 			.replace(/<[^>]+>/g, '')));
-		// 	if (embedsContainJapanese && message.channel.id !== '514216680201912320' && message.channel.id !== '563903914756407307') {
-		// 		let content = message.content.replace(/(https:\/\/(?:girlcockx|vxtwitter|fixvx|fxtwitter)\.com\/[^\s?]+)(?:\?.*?)?(\/en)?(?=\s|$)/g, '$1/en');
-		// 		if (!content.includes('/en/en')) {
-		// 			content = content.replace(/https:\/\/(vxtwitter|fixvx|girlcockx)\.com/g, 'https://girlcockx.com');
-		// 			try {
-		// 				await message.channel.createMessage(`${content}\n\n- Sent by ${message.author.username}`);
-		// 				await message.delete();
-		// 			} catch (error) {
-		// 				console.log('Screw you aztec');
-		// 			}
-		// 		}
-		// 	}
-		// }, 2000);
+		setTimeout(async () => {
+			const embedsContainJapanese = message.embeds.some(embed => containsJapanese
+				.test((embed.description || '')
+					.replace(/#[\wぁ-んァ-ン一-龥々ー]+/g, '')
+					.replace(/<[^>]+>/g, '')));
+			if (embedsContainJapanese && message.channel.id !== '514216680201912320' && message.channel.id !== '563903914756407307') {
+				let content = message.content.replace(/(https:\/\/(?:girlcockx|vxtwitter|fixvx|fxtwitter)\.com\/[^\s?]+)(?:\?.*?)?(\/en)?(?=\s|$)/g, '$1/en');
+				if (!content.includes('/en/en')) {
+					content = content.replace(/https:\/\/(vxtwitter|fixvx|girlcockx)\.com/g, 'https://girlcockx.com');
+					try {
+						await message.channel.createMessage(`${content}\n\n- Sent by ${message.author.username}`);
+						await message.delete();
+					} catch (error) {
+						console.log('Screw you aztec');
+					}
+				}
+			}
+		}, 2000);
 	}
 });
 
