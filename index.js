@@ -273,7 +273,7 @@ yuuko.on('messageCreate', async message => {
 	if (/https:\/\/twitter|https:\/\/x\.com/.test(message.content) && /\/status\//.test(message.content) && !message.author.bot) {
 		let content = message.content.replaceAll(/https:\/\/twitter\.com/g, 'https://girlcockx.com');
 		content = content.replaceAll(/https:\/\/x\.com/g, 'https://girlcockx.com');
-		content = content.replaceAll(/(https:\/\/girlcockx\.com\/[^\s?]+)(?:\?.*?)?(\/en)?(?=\s|$)/g, '$1/en');
+		content = content.replaceAll(/(https:\/\/girlcockx\.com\/[^\s?]+)(?:\?.*?)?(\/en)?(?=\s|\|\|)/g, '$1/en');
 		try {
 			await message.channel.createMessage(`Sent by ${message.author.username}: ${content}`);
 			await message.delete();
@@ -288,9 +288,9 @@ yuuko.on('messageCreate', async message => {
 					.replace(/#[\wぁ-んァ-ン一-龥々ー]+/g, '')
 					.replace(/<[^>]+>/g, '')));
 			if (embedsContainJapanese && message.channel.id !== '514216680201912320' && message.channel.id !== '563903914756407307') {
-				let content = message.content.replace(/(https:\/\/(?:girlcockx|vxtwitter|fixvx|fxtwitter)\.com\/[^\s?]+)(?:\?.*?)?(\/en)?(?=\s|$)/g, '$1/en');
+				let content = message.content.replaceAll(/(https:\/\/girlcockx\.com\/[^\s?]+)(?:\?.*?)?(\/en)?(?=\s|\|\|)/g, '$1/en');
 				if (!content.includes('/en/en')) {
-					content = content.replace(/https:\/\/(vxtwitter|fixvx|girlcockx)\.com/g, 'https://girlcockx.com');
+					content = content.replaceAll(/https:\/\/(vxtwitter|fixvx|girlcockx)\.com/g, 'https://girlcockx.com');
 					try {
 						await message.channel.createMessage(`${content}\n\n- Sent by ${message.author.username}`);
 						await message.delete();
