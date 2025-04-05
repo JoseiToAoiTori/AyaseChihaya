@@ -289,6 +289,9 @@ yuuko.on('messageCreate', async message => {
 					.replace(/<[^>]+>/g, '')));
 			if (embedsContainJapanese && message.channel.id !== '514216680201912320' && message.channel.id !== '563903914756407307') {
 				let content = message.content.replaceAll(/(https:\/\/vxtwitter|fixvx|girlcockx|fxtwitter\.com\/[^\s?]+)(?:\?.*?)?(\/en)?(?=\s|\|\|)/g, '$1/en');
+				
+				if (/https:\/\/vxtwitter|fixvx|girlcockx|fxtwitter\.com\/[^\s]+\/en(?=\s|\|\||$)/.test(message.content)) return;
+				
 				if (!content.includes('/en/en')) {
 					content = content.replaceAll(/https:\/\/(vxtwitter|fixvx|girlcockx|fxtwitter)\.com/g, 'https://girlcockx.com');
 					try {
