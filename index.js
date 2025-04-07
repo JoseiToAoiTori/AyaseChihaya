@@ -280,35 +280,6 @@ yuuko.on('messageCreate', async message => {
 		} catch (error) {
 			console.log('Screw you aztec');
 		}
-	} else if (/https:\/\/vxtwitter|https:\/\/fixvx|https:\/\/girlcockx|https:\/\/fxtwitter\.com/.test(message.content) && /\/status\//.test(message.content) && !message.author.bot) {
-		const containsJapanese = /[\u3040-\u30FF\u4E00-\u9FFF]/;
-		setTimeout(async () => {
-			const embedsContainJapanese = message.embeds.some(embed =>
-				containsJapanese.test(
-					(embed.description || '')
-						.replace(/#[\wぁ-んァ-ン一-龥々ー]+/g, '')
-						.replace(/<[^>]+>/g, '')
-				)
-			);
-			
-			if (embedsContainJapanese && message.channel.id !== '514216680201912320' && message.channel.id !== '563903914756407307'
-			) {
-				let content = message.content.replaceAll(/(https:\/\/(?:vxtwitter\.com|fixvx\.com|girlcockx\.com|fxtwitter\.com)\/[^\s?]+)(?:\?[^\s]*)?(\/en)?(?=\s|\|\||$)/g, '$1/en');
-			
-				if (/https:\/\/(?:vxtwitter\.com|fixvx\.com|girlcockx\.com|fxtwitter\.com)\/[^\s]+\/en(?=\s|\|\||$)/.test(message.content)) return;
-			
-				if (!content.includes('/en/en')) {
-					content = content.replaceAll(/https:\/\/(vxtwitter|fixvx|girlcockx|fxtwitter)\.com/g, 'https://girlcockx.com');
-					try {
-						await message.channel.createMessage(`${content}\n\n- Sent by ${message.author.username}`);
-						await message.delete();
-					} catch (error) {
-						console.log('Screw you aztec');
-					}
-				}
-			}
-			
-		}, 2000);
 	}
 });
 
