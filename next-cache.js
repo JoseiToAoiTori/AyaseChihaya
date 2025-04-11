@@ -36,7 +36,7 @@ async function getSeasonalShows () {
 	// FALL
 	// Months September to November
 	//
-	const startdateGreater = 20250301;
+	const startdateGreater = 20241201;
 	const startdateLesser = 20250530;
 	try {
 		data = await superagent
