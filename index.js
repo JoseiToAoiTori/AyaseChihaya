@@ -271,9 +271,9 @@ yuuko.on('messageCreate', async message => {
 	}
 
 	if (/https:\/\/twitter|https:\/\/x\.com/.test(message.content) && /\/status\//.test(message.content) && !message.author.bot) {
-		let content = message.content.replaceAll(/https:\/\/twitter\.com/g, 'https://girlcockx.com');
-		content = content.replaceAll(/https:\/\/x\.com/g, 'https://girlcockx.com');
-		content = content.replaceAll(/(https:\/\/girlcockx\.com\/[^\s?]+)(?:\?[^\s]*)?(\/en)?(?=\s|\|\||$)/g, '$1/en');
+		let content = message.content.replaceAll(/https:\/\/twitter\.com/g, 'https://fxtwitter.com');
+		content = content.replaceAll(/https:\/\/x\.com/g, 'https://fxtwitter.com');
+		content = content.replaceAll(/(https:\/\/fxtwitter\.com\/[^\s?]+)(?:\?[^\s]*)?(\/en)?(?=\s|\|\||$)/g, '$1/en');
 		try {
 			await message.channel.createMessage(`Sent by ${message.author.username}: ${content}`);
 			await message.delete();
@@ -285,7 +285,7 @@ yuuko.on('messageCreate', async message => {
 
 const vxRegex = new RegExp(/https:\/\/girlcockx|fxtwitter\.com/g);
 
-// Allow people to delete girlcockx messages if they are the author
+// Allow people to delete fxtwitter messages if they are the author
 yuuko.on('messageReactionAdd', async (message, emote, reactor) => {
 	const msg = await yuuko.getMessage(message.channel.id, message.id);
 	if (msg.author.id === yuuko.user.id && emote.name === '✂️' && msg.content.includes(reactor.username) && vxRegex.test(msg.content)) {
