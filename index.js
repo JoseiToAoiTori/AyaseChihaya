@@ -270,17 +270,18 @@ yuuko.on('messageCreate', async message => {
 		message.channel.createMessage(`<@${message.author.id}> https://kpop.fandom.com/\n\nLook them up you lazy bum`);
 	}
 
-	if (/https:\/\/twitter|https:\/\/x\.com/.test(message.content) && /\/status\//.test(message.content) && !message.author.bot) {
-		let content = message.content.replaceAll(/https:\/\/twitter\.com/g, 'https://fxtwitter.com');
-		content = content.replaceAll(/https:\/\/x\.com/g, 'https://fxtwitter.com');
-		content = content.replaceAll(/(https:\/\/fxtwitter\.com\/[^\s?]+)(?:\?[^\s]*)?(\/en)?(?=\s|\|\||$)/g, '$1/en');
-		try {
-			await message.channel.createMessage(`Sent by ${message.author.username}: ${content}`);
-			await message.delete();
-		} catch (error) {
-			console.log('Screw you aztec');
-		}
-	}
+	// Deprecated by Ichigo
+	// if (/https:\/\/twitter|https:\/\/x\.com/.test(message.content) && /\/status\//.test(message.content) && !message.author.bot) {
+	// 	let content = message.content.replaceAll(/https:\/\/twitter\.com/g, 'https://fxtwitter.com');
+	// 	content = content.replaceAll(/https:\/\/x\.com/g, 'https://fxtwitter.com');
+	// 	content = content.replaceAll(/(https:\/\/fxtwitter\.com\/[^\s?]+)(?:\?[^\s]*)?(\/en)?(?=\s|\|\||$)/g, '$1/en');
+	// 	try {
+	// 		await message.channel.createMessage(`Sent by ${message.author.username}: ${content}`);
+	// 		await message.delete();
+	// 	} catch (error) {
+	// 		console.log('Screw you aztec');
+	// 	}
+	// }
 });
 
 const vxRegex = new RegExp(/https:\/\/girlcockx|fxtwitter\.com/g);
